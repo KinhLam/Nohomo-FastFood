@@ -1,4 +1,4 @@
-# <h1 align="center">YANNN COFFEE SHOP</h1>
+# <h1 align="center">NOHOMO FASTFOOD SHOP</h1>
 This is a frontend part for [api project](https://github.com/ryanagungsamudra/backend-yannn-coffee-shop).
 
  <p align="center">
