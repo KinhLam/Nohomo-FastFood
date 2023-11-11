@@ -29,7 +29,7 @@ This is a frontend part for [api project](https://github.com/ryanagungsamudra/ba
 
 ## About The Project
 
-YANNN Coffee Shop is a website application for ordering coffee and food. This project was developed using a framework/library React JS, Redux, and Bootstrap. In the backend using Node JS, Express JS, and PostgreSQL for the database.
+NoHomo FastFood Shop is a website application for ordering coffee and food. This project was developed using a framework/library React JS, Redux, and Bootstrap. In the backend using Node JS, Express JS, and PostgreSQL for the database.
 
 ### Built With
 
