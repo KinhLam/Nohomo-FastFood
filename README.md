@@ -48,4 +48,4 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ryanagungsamudra/YANNN-COFFEE-SHOP.git
+   git clone https://github.com/KinhLam/Nohomo-FastFood.git
