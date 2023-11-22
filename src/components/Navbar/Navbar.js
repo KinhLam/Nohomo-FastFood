@@ -15,8 +15,8 @@ const Navbar = ({status}) => {
     if (role === 'admin') {
       return (
         <>
-          <Link to="/" className={status.Home}>Home</Link>
-          <Link to="/products" className={status.Product}>Product</Link>
+          <Link to="/" className={status.Home}>Trang chủ</Link>
+          <Link to="/products" className={status.Product}>Thực đơn</Link>
           <Link to="/orderlist" className={status.Payment}>Order</Link>
           <Link to="/dashboard" className={status.History}>Dashboard</Link>
         </>
@@ -24,8 +24,8 @@ const Navbar = ({status}) => {
     } else {
       return (
         <>
-          <Link to="/" className={status.Home}>Home</Link>
-          <Link to="/products" className={status.Product}>Product</Link>
+          <Link to="/" className={status.Home}>Trang chủ</Link>
+          <Link to="/products" className={status.Product}>Thực đơn</Link>
           <Link to="/payment" className={status.Payment}>Your Cart</Link>
           <Link to="/history" className={status.History}>History</Link>
         </>
@@ -48,8 +48,8 @@ const Navbar = ({status}) => {
           {isAdmin()}
           {localStorage.getItem('@userLogin') ? ('') : (
             <div className="auth-nav-items-mobile mx-auto">
-              <Link to="/login" className="d-block d-sm-none d-md-none d-lg-none btn btn-light login-mobile mb-2 py-2 ">Login</Link>
-              <Link to="/signup" className="d-block d-sm-none d-md-none d-lg-none btn btn-warning signup-mobile py-2 ">Sign Up</Link>
+              <Link to="/login" className="d-block d-sm-none d-md-none d-lg-none btn btn-light login-mobile mb-2 py-2 ">Đăng nhập</Link>
+              <Link to="/signup" className="d-block d-sm-none d-md-none d-lg-none btn btn-warning signup-mobile py-2 ">Đăng ký</Link>
             </div>
           )}
         </div>
