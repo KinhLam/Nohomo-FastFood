@@ -40,7 +40,7 @@ body.dark {
 
   /* Section 1 */
   .hero-1 {
-    background-image: url(./assets/homepage/hero-1.png);
+    background-image: url(./assets/homepage/hero-1-a.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -247,16 +247,17 @@ a {
 
 /* SECTION 1 */
 .hero-1 {
-  background-image: url(./assets/homepage/hero-1.png);
+  background-image: url(./assets/homepage/hero-1-b.png);
   background-size: cover;
-  height: 100vh;
+  background-position: 50% 30%; 
+  height: 80vh;
   width: 100%;
 }
 
 .typo-1-s1 {
   font-weight: 700;
   font-size: 50px;
-  color: #FFFFFF;
+  color: rgb(255, 255, 255);
   margin-top: 20px;
 }
 
