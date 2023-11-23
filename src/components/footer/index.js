@@ -20,8 +20,7 @@ function Footer() {
                         <div className="col-8 pt-footer-global">
                             <Link to="/">
                                 <img src={CoffeeLogo} alt="logo" className="pb-2" />
-                                <p className="d-inline ps-2 footer-name-tag">YANNN
-                                    COFFEE</p>
+                                <p className="d-inline ps-2 footer-name-tag">NO HOMO</p>
                             </Link>
                             <p className="mt-3 footer-p">
                                 Coffee Shop is a store that sells some good <br />meals, and especially coffee. We provide
@@ -38,7 +37,7 @@ function Footer() {
                                     <img src={Instagram} alt="instagram logo" />
                                 </a>
                             </div>
-                            <p style={{ color: '#AFB5C0', fontSize: '16px', fontWeight: 400 }}>©2022CoffeeStore</p>
+                            <p style={{ color: '#AFB5C0', fontSize: '16px', fontWeight: 400 }}>©2023FastFoodStore</p>
                         </div>
                         <div className="col-2 pt-footer-global">
                             <h5 className="mb-4 footer-h5">Product</h5>

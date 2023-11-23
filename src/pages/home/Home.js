@@ -14,10 +14,10 @@ function Home() {
             <InfoPanelFirst />
             <SectionTwo />
             <SectionThree />
-            <SectionFour />
+            {/* <SectionFour /> */}
             <SectionFive />
             <FooterHome />
-            <InfoPanelSecond />
+            {/* <InfoPanelSecond /> */}
         </>
     )
 }

@@ -19,7 +19,7 @@ function FooterHome() {
                         <div className="col-lg-8 col-9 pt-footer">
                             <Link to="/">
                                 <img src={CoffeeLogo} alt="logo" className="pb-2" />
-                                <p className="d-inline ps-2 footer-name-tag">NoHomo</p>
+                                <p className="d-inline ps-2 footer-name-tag">NO HOMO</p>
                             </Link>
                             <p className="mt-3 footer-p">
                                 Coffee Shop is a store that sells some good <br />meals, and especially coffee. We provide
@@ -36,7 +36,7 @@ function FooterHome() {
                                     <img src={Instagram} alt="Instagram" />
                                 </a>
                             </div>
-                            <p style={{ color: '#AFB5C0', fontSize: '16px', fontWeight: 400 }}>©2022CoffeeStore</p>
+                            <p style={{ color: '#AFB5C0', fontSize: '16px', fontWeight: 400 }}>©2023FastFoodStore</p>
                         </div>
                         <div className="col-lg-2 col-3 pt-footer">
                             <h5 className="mb-4 footer-h5">Product</h5>
