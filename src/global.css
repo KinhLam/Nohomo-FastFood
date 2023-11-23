@@ -249,7 +249,7 @@ a {
 .hero-1 {
   background-image: url(./assets/homepage/hero-1-b.png);
   background-size: cover;
-  background-position: 50% 30%; 
+  background-position: 50% 30%; /*center top */
   height: 80vh;
   width: 100%;
 }
