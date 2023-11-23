@@ -6,7 +6,7 @@ import GoogleLogo from "../../../assets/login/googleLogo.svg"
 import axios from 'axios'
 
 function MainSignup() {
-    const url = process.env.REACT_APP_HOST
+    const url = "https://localhost:44301"
     const [signupForm, setSignupForm] = useState({
         email: '',
         password: '',
@@ -18,7 +18,7 @@ function MainSignup() {
     const handleSignup = async (event) => {
         event.preventDefault()
         return await axios({
-            url: `${url}/api/auth/register`,
+            url: `${url}/api/DangNhapKy`,
             method: 'POST',
             data: signupForm
         }).then((res) => {

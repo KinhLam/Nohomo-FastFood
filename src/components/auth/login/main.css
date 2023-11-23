@@ -69,7 +69,7 @@
 
 /* Styling Start*/
 .s-1-auth {
-    font-family: 'Poppins';
+    font-family: 'Tahoma';
     font-style: normal;
     font-weight: 700;
     font-size: 17px;
@@ -77,21 +77,21 @@
 }
 
 .s-sm-auth {
-    font-family: 'Rubik';
+    font-family: 'Tahoma';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .s-md-auth {
-    font-family: 'Rubik';
+    font-family: 'Tahoma';
     font-style: normal;
     font-weight: 500;
 }
 
 .s-lg-auth {
-    font-family: 'Rubik';
+    font-family: 'Tahoma';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 20px;
     color: var(--hover-color);
 }
