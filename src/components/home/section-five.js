@@ -3,10 +3,11 @@ import Testi1 from "../../assets/homepage/testi1.svg"
 import Testi2 from "../../assets/homepage/testi2.svg"
 import Testi3 from "../../assets/homepage/testi3.svg"
 import Netflix from "../../assets/homepage/sponsored-netflix.png"
-import Reddit from "../../assets/homepage/sponsored-reddit.png"
-import Amazon from "../../assets/homepage/sponsored-amazon.png"
-import Discord from "../../assets/homepage/sponsored-discord.png"
-import Spotify from "../../assets/homepage/sponsored-spotify.png"
+import Reactjs from "../../assets/homepage/sponsored-react.png"
+import VisualCode from "../../assets/homepage/s.png"
+import Nodejs from "../../assets/homepage/sponsored-nodejs.png"
+import Visual from "../../assets/homepage/sponsored-vs-removebg-preview.png"
+import Figma from "../../assets/homepage/sponsored-figma-a.png"
 
 function SectionFive() {
     return (
@@ -14,44 +15,44 @@ function SectionFive() {
             <div className="container">
                 <div className="row text-center">
                     <div className="col">
-                        <h4 className="typo-primary">Our Partner</h4>
+                        <h4 className="typo-primary">Công nghệ sử dụng</h4>
                         <div className="width-based mobile">
                             <div className="row width-based-product mobile">
                                 <div className="col-4 col-lg width-based-product mobile">
                                     <img
-                                        src={Netflix}
+                                        src={Figma}
                                         className="img-partener-thumbnail mobile"
                                         alt="partner img"
                                     />
                                 </div>
                                 <div className="col-4 col-lg width-based-product mobile">
                                     <img
-                                        src={Reddit}
+                                        src={Nodejs}
                                         className="img-partener-thumbnail mobile"
                                         alt="partner img"
                                     />
                                 </div>
                                 <div className="col-4 col-lg width-based-product mobile">
                                     <img
-                                        src={Amazon}
+                                        src={Visual}
                                         className="img-partener-thumbnail mobile"
                                         alt="partner img"
                                     />
                                 </div>
                                 <div className="col-4 col-lg width-based-product mobile">
                                     <img
-                                        src={Discord}
+                                        src={Reactjs}
                                         className="img-partener-thumbnail mobile"
                                         alt="partner img"
                                     />
                                 </div>
-                                <div className="col-4 col-lg width-based-product mobile">
+                                {/* <div className="col-4 col-lg width-based-product mobile">
                                     <img
-                                        src={Spotify}
+                                        src={VisualCode}
                                         className="img-partener-thumbnail mobile"
                                         alt="partner img"
                                     />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -10,8 +10,8 @@ function SectionThree() {
             <div className="container">
                 <div className="row text-center">
                     <div className="col text-mobile">
-                        <h4 className="typo-primary">Here is People’s Favorite</h4>
-                        <p className="typo-secondary">Let’s choose and have a bit taste of poeple’s favorite. It might be yours too!</p>
+                        <h4 className="typo-primary">Những món ăn có thể bạn sẽ thích</h4>
+                        <p className="typo-secondary">Hãy cùng lựa chọn và nếm thử một chút hương vị được mọi người yêu thích nhé. Nó cũng có thể là của bạn!</p>
                     </div>
                 </div>
             </div>
