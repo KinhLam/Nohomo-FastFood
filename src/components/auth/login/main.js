@@ -34,9 +34,9 @@ function MainLogin() {
             console.log(res)
             // localStorage.setItem('@userLogin', JSON.stringify(res.data.data))
             // localStorage.setItem('@userRole', (res.data.data.user.role))
-            navigate('/products')
+            //navigate('/products')
         }).catch((err) => {
-            //console.log(err)
+            console.log(err)
             //setValidate({ error: true, message: err.response.data.message })
         })
     }
