@@ -9,10 +9,10 @@ This is a frontend part for [api project](https://github.com/ryanagungsamudra/ba
     <a href="https://github.com/ryanagungsamudra/YANNN-COFFEE-SHOP/pulls">Request Feature</a>
   </p>
 
-<img align="left" width="47%" src="https://user-images.githubusercontent.com/115606537/224928338-16382e85-b5e3-4253-bd32-0ca18327ad41.png"/>
+<!-- <img align="left" width="47%" src="https://user-images.githubusercontent.com/115606537/224928338-16382e85-b5e3-4253-bd32-0ca18327ad41.png"/>
 <img align="left" width="47%" src="https://user-images.githubusercontent.com/115606537/224929187-fed4cd85-9e8d-4f73-9836-aa8e041c4e92.png"/>
 <img align="left" width="47%" src="https://user-images.githubusercontent.com/115606537/224928143-373e607f-cd3e-4948-9534-ccf7d7e193e3.png"/>
-<img align="center" width="47%" src="https://user-images.githubusercontent.com/115606537/224928508-76079f0c-c7ff-463e-a54f-9b48fa514a5c.png"/>
+<img align="center" width="47%" src="https://user-images.githubusercontent.com/115606537/224928508-76079f0c-c7ff-463e-a54f-9b48fa514a5c.png"/> -->
 
 
 ## Table of Contents

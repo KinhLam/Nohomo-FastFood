@@ -26,8 +26,8 @@ const Navbar = ({status}) => {
         <>
           <Link to="/" className={status.Home}>Trang chủ</Link>
           <Link to="/products" className={status.Product}>Thực đơn</Link>
-          <Link to="/payment" className={status.Payment}>Your Cart</Link>
-          <Link to="/history" className={status.History}>History</Link>
+          <Link to="/payment" className={status.Payment}>Giỏ hàng</Link>
+          {/* <Link to="/history" className={status.History}>History</Link> */}
         </>
       )
     }

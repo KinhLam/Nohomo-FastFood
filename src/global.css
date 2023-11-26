@@ -1,5 +1,5 @@
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background: var(--basic-color);
   scroll-behavior: smooth;
 }
@@ -276,7 +276,7 @@ a {
 
 .typo-3-s2 {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--primary-color);
 }
 
