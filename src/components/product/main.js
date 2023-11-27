@@ -81,7 +81,7 @@ function Main() {
                             <Link to="#" className="page-link">1</Link>
                         </li>
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, 2, 1)}>Next</Link>
+                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, 2, 1)}>Tiếp</Link>
                         </li>
                     </ul>
                 </nav>
@@ -92,13 +92,13 @@ function Main() {
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Previous</Link>
+                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Trước</Link>
                         </li>
                         <li className="page-item">
                             <Link to="#" className="page-link">{currentPage}</Link>
                         </li>
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage + 1), 1)}>Next</Link>
+                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage + 1), 1)}>Tiếp</Link>
                         </li>
                     </ul>
                 </nav>
@@ -109,7 +109,7 @@ function Main() {
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Previous</Link>
+                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Trước</Link>
                         </li>
                         <li className="page-item">
                             <Link to="#" className="page-link">{currentPage}</Link>
@@ -189,8 +189,8 @@ function Main() {
                 <div className="row">
                     {/* LEFT SIDE */}
                     <div className="col-lg-4 border-end border-2 text-center ms-3 ms-lg-0">
-                        <h4 className="s-1-product me-4 me-lg-0" style={{ marginTop: '60px' }}>Promo Today</h4>
-                        <p className="s-2-product pt-3 me-4 me-lg-0" style={{ marginBottom: '60px' }}>Coupons will be updated every weeks. <br />Check them out!</p>
+                        <h4 className="s-1-product me-4 me-lg-0" style={{ marginTop: '60px' }}>Khuyễn mãi hôm nay</h4>
+                        <p className="s-2-product pt-3 me-4 me-lg-0" style={{ marginBottom: '60px' }}>Chương trình sẽ cập nhật hàng tuần <br />Hãy theo dõi!</p>
 
                         {/* Promo Card Start */}
                         <div>
@@ -201,7 +201,7 @@ function Main() {
                                             <img className="pt-2" src={Promo_1} alt="promo" />
                                         </div>
                                         <div className="col text-start pt-3">
-                                            <p><b>HAPPY MOTHER’S DAY!</b><br />Get one of our favorite menu for free!</p>
+                                            <p><b>Chào mừng ngày nhà giáo!</b><br />Nhận miễn phí một trong những thực đơn yêu thích của chúng tôi!</p>
                                         </div>
                                     </div>
                                 </div>
@@ -213,19 +213,7 @@ function Main() {
                                             <img className="pt-2" src={Promo_2} alt="promo" />
                                         </div>
                                         <div className="col text-start pt-3">
-                                            <p><b>Get a cup of coffee for free on sunday morning</b><br />Only at 7 to 9 AM</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="box-card-1-product popup-scale">
-                                <div className="container-fluid">
-                                    <div className="row">
-                                        <div className="col-3">
-                                            <img className="pt-2" src={Promo_3} alt="promo" />
-                                        </div>
-                                        <div className="col text-start pt-3">
-                                            <p><b>HAPPY MOTHER’S DAY!</b><br />Get one of our favorite menu for free!</p>
+                                            <p><b>Nhận được một ly cà phê miễn phí vào chủ nhật</b><br />Chỉ từ 7h đến 9h sáng</p>
                                         </div>
                                     </div>
                                 </div>
@@ -237,8 +225,9 @@ function Main() {
                                             <img className="pt-1" src={Promo_4} alt="promo" />
                                         </div>
                                         <div className="col text-start pt-2">
-                                            <p><b>HAPPY HALLOWEEN!</b>
-                                                <br />Do you like chicken wings? <br />Get 1 free only if you buy pinky promise</p>
+                                            <p><b>Chào mừng HALLOWEEN!</b>
+                                                <br />Bạn có thích cánh gà không? <br />
+Nhận 1 miễn phí chỉ khi bạn mua lời hứa hồng hào</p>
                                         </div>
                                     </div>
                                 </div>
@@ -249,11 +238,12 @@ function Main() {
                             <button className="btn btn-warning product" style={{ margin: '50px 20px 90px 0px' }}>Apply Coupon</button>
                         </Link>
                         <p className="text-start s-3-product" style={{ marginTop: '-1rem' }}>
-                            <b>Terms and Condition</b><br />
-                            1. You can only apply 1 coupon per day<br />
-                            2. It only for dine in<br />
-                            3. Buy 1 get 1 only for new user<br />
-                            4. Should make member card to apply coupon<br />
+                            
+<b>Điều khoản và Điều kiện</b><br />
+                            1. Bạn chỉ có thể áp dụng 1 phiếu giảm giá mỗi ngày<br />
+                            2. Chỉ dùng bữa tại<br />
+                            3. Mua 1 tặng 1 chỉ dành cho người dùng mới<br />
+                            4. Nên làm thẻ thành viên để áp dụng coupon<br />
                         </p>
                         {editPromoAdmin()}
                     </div>
@@ -262,15 +252,15 @@ function Main() {
 
                         {/* sort by start */}
                         <select className="form-select product mobile" aria-label="Default select example" onChange={handleSort}>
-                            <option selected>Sort price by</option>
-                            <option value="asc">Lowest price</option>
-                            <option value="desc">Highest price</option>
+                            <option selected>Sắp xếp giá theo</option>
+                            <option value="asc">Giá thấp nhất</option>
+                            <option value="desc">Giá cao nhất</option>
                         </select>
                         {/* sort by end */}
 
                         {/* search bar start */}
                         <div className="searchBox mobile">
-                            <input type="text" placeholder="Search Anything You Want..." onChange={(e) => setKeyword(e.target.value)} />
+                            <input type="text" placeholder="Tìm kiếm mọi thứ bạn muốn..." onChange={(e) => setKeyword(e.target.value)} />
                             <img src={Search} alt="searchBox" />
                         </div>
                         {/* search bar end */}
@@ -301,7 +291,7 @@ function Main() {
                         {renderPagination()}
                         {/* Pagination end */}
 
-                        <p className="s-5-product ms-3">*the price has been cutted by discount appears</p>
+                        <p className="s-5-product ms-3">*đã áp dụng mã giảm giá</p>
                         {/* Card-Product End */}
                         {editProductAdmin()}
                     </div>

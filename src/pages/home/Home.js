@@ -17,7 +17,7 @@ function Home() {
             {/* <SectionFour /> */}
             <SectionFive />
             <FooterHome />
-            {/* <InfoPanelSecond /> */}
+            <InfoPanelSecond />
         </>
     )
 }

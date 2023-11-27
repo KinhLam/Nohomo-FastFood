@@ -3,6 +3,12 @@ import Checkcard from "../../assets/homepage/checkcard.svg"
 import Card1 from "../../assets/homepage/card1.png"
 import Card2 from "../../assets/homepage/card2.png"
 import Card3 from "../../assets/homepage/card3.png"
+import Ellipse2 from "../../assets/homepage/Ellipse2.png"
+import Ellipse3 from "../../assets/homepage/Ellipse3.png"
+import Ellipse4 from "../../assets/homepage/Ellipse4.png"
+import Ellipse5 from "../../assets/homepage/Ellipse5.png"
+import Ellipse6 from "../../assets/homepage/Ellipse6.png"
+import Ellipse7 from "../../assets/homepage/Ellipse7.png"
 
 function SectionThree() {
     return (
@@ -10,7 +16,7 @@ function SectionThree() {
             <div className="container">
                 <div className="row text-center">
                     <div className="col text-mobile">
-                        <h4 className="typo-primary">Những món ăn có thể bạn sẽ thích</h4>
+                        <h4 className="typo-primary">Những món ăn đặc sắc</h4>
                         <p className="typo-secondary">Hãy cùng lựa chọn và nếm thử một chút hương vị được mọi người yêu thích nhé. Nó cũng có thể là của bạn!</p>
                     </div>
                 </div>
@@ -20,50 +26,50 @@ function SectionThree() {
             <div className="container mt-card d-none d-lg-block">
                 <div className="row row-cols-1 row-cols-md-3 g-4 ms-5">
                     <div className="col text-start ms-5 ms-lg-0 my-5 my-lg-0 card-transition-1">
-                        <div className="card" style={{ height: '300px', width: '300px' }}>
-                            <img src={Card1} className="card-img-top" alt="card" style={{ marginTop: '-90px' }} />
+                        <div className="card" style={{ height: '200px', width: '300px' }}>
+                            <img src={Ellipse2} className="card-img-top" alt="card" style={{ marginTop: '-90px', width: '200px', marginLeft: '50px', marginBottom: '35%' }} />
                             <div className="card-body">
-                                <h5 className="card-title" style={{ marginTop: '-100px', marginLeft: '60px' }}>Hazelnut Latte</h5>
-                                <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
+                                <h5 className="card-title" style={{ marginTop: '-100px', fontWeight: '600', fontSize: '40px', textAlign: 'center' }}>Phở</h5>
+                                {/* <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
                                 </div>
                                 <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                     <div className="col text-start ms-5 ms-lg-0 my-5 my-lg-0 card-transition-2">
-                        <div className="card" style={{ height: '300px', width: '300px' }}>
-                                <img src={Card1} className="card-img-top" alt="card" style={{ marginTop: '-90px' }} />
+                        <div className="card" style={{ height: '200px', width: '300px' }}>
+                                <img src={Ellipse3} className="card-img-top" alt="card" style={{ marginTop: '-90px', width: '200px', marginLeft: '50px', marginBottom: '35%' }} />
                                 <div className="card-body">
-                                    <h5 className="card-title" style={{ marginTop: '-100px', marginLeft: '60px' }}>Hazelnut Latte</h5>
-                                    <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
+                                <h5 className="card-title" style={{ marginTop: '-100px', fontWeight: '600', fontSize: '40px', textAlign: 'center' }}>Hamburger</h5>
+                                    {/* <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                         <img src={Checkcard} alt="" />
                                         <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
                                     </div>
                                     <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                         <img src={Checkcard} alt="" />
                                         <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
                     <div className="col text-start ms-5 ms-lg-0 my-5 my-lg-0 card-transition-3">
-                    <div className="card" style={{ height: '300px', width: '300px' }}>
-                            <img src={Card1} className="card-img-top" alt="card" style={{ marginTop: '-90px' }} />
+                    <div className="card" style={{ height: '200px', width: '300px' }}>
+                            <img src={Ellipse4} className="" alt="card" style={{ marginTop: '-90px', width: '200px', marginLeft: '50px', marginBottom: '35%' }} />
                             <div className="card-body">
-                                <h5 className="card-title" style={{ marginTop: '-100px', marginLeft: '60px' }}>Hazelnut Latte</h5>
-                                <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
+                            <h5 className="card-title" style={{ marginTop: '-100px', fontWeight: '600', fontSize: '40px', textAlign: 'center' }}>Pizza</h5>
+                                {/* <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
                                 </div>
                                 <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -74,50 +80,50 @@ function SectionThree() {
             <div className="container mt-card d-none d-lg-block">
                 <div className="row row-cols-1 row-cols-md-3 g-4 ms-5">
                     <div className="col text-start ms-5 ms-lg-0 my-5 my-lg-0 card-transition-1">
-                        <div className="card" style={{ height: '300px', width: '300px' }}>
-                            <img src={Card1} className="card-img-top" alt="card" style={{ marginTop: '-90px' }} />
+                        <div className="card" style={{ height: '200px', width: '300px' }}>
+                            <img src={Ellipse5} className="" alt="card" style={{ marginTop: '-90px', width: '200px', marginLeft: '50px', marginBottom: '35%' }} />
                             <div className="card-body">
-                                <h5 className="card-title" style={{ marginTop: '-100px', marginLeft: '60px' }}>Hazelnut Latte</h5>
-                                <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
+                            <h5 className="card-title" style={{ marginTop: '-100px', fontWeight: '600', fontSize: '40px', textAlign: 'center' }}>Bánh xèo</h5>
+                                {/* <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
                                 </div>
                                 <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                     <div className="col text-start ms-5 ms-lg-0 my-5 my-lg-0 card-transition-2">
-                        <div className="card" style={{ height: '300px', width: '300px' }}>
-                                <img src={Card1} className="card-img-top" alt="card" style={{ marginTop: '-90px' }} />
+                        <div className="card" style={{ height: '200px', width: '300px' }}>
+                                <img src={Ellipse6} className="" alt="card" style={{ marginTop: '-90px', width: '200px', marginLeft: '50px', marginBottom: '35%' }} />
                                 <div className="card-body">
-                                    <h5 className="card-title" style={{ marginTop: '-100px', marginLeft: '60px' }}>Hazelnut Latte</h5>
-                                    <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
+                                <h5 className="card-title" style={{ marginTop: '-100px', fontWeight: '600', fontSize: '40px', textAlign: 'center' }}>Bánh mì</h5>
+                                    {/* <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                         <img src={Checkcard} alt="" />
                                         <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
                                     </div>
                                     <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                         <img src={Checkcard} alt="" />
                                         <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
                     <div className="col text-start ms-5 ms-lg-0 my-5 my-lg-0 card-transition-3">
-                    <div className="card" style={{ height: '300px', width: '300px' }}>
-                            <img src={Card1} className="card-img-top" alt="card" style={{ marginTop: '-90px' }} />
+                    <div className="card" style={{ height: '200px', width: '300px' }}>
+                            <img src={Ellipse7} className="" alt="card" style={{ marginTop: '-90px', width: '200px', marginLeft: '50px', marginBottom: '35%' }} />
                             <div className="card-body">
-                                <h5 className="card-title" style={{ marginTop: '-100px', marginLeft: '60px' }}>Hazelnut Latte</h5>
-                                <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
+                            <h5 className="card-title" style={{ marginTop: '-100px', fontWeight: '600', fontSize: '40px', textAlign: 'center' }}>Gỏi cuốn</h5>
+                                {/* <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
                                 </div>
                                 <div className="card-text pt-2" style={{ marginLeft: '40px' }}>
                                     <img src={Checkcard} alt="" />
                                     <p className="d-inline ps-2 typo-3-s2">HazelnutSyrup</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -11,11 +11,11 @@ function InfoPanelSecond() {
                             <div className="container">
                                 <div className="row">
                                     <div className="col col-lg">
-                                        <h4 className="typo1-secondpanel mobile">Check our promo <br />today!</h4>
-                                        <p className="typo2-secondpanel mobile">Let's see the deals and pick yours!</p>
+                                        <h4 className="typo1-secondpanel mobile">Theo dõi khuyến mãi <br />ngay hôm nay!</h4>
+                                        <p className="typo2-secondpanel mobile">Hãy xem các giao dịch và chọn của bạn!</p>
                                     </div>
                                     <div className="col col-lg see-promo-btn">
-                                        <Link to="/products"><button className="btn btn-warning home px-5 py-3">See Promo</button></Link>
+                                        <Link to="/products"><button className="btn btn-warning home px-5 py-3">Xem khuyến mãi</button></Link>
                                     </div>
                                 </div>
                             </div>
