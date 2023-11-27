@@ -1,0 +1,52 @@
+/* NavbarLeft.css */
+.NavbarLeft {
+    height: 100vh;
+    width: 30vh;
+    background-color: #6a4029;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NavbarLeft ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    flex-grow: 1; /* Mở rộng để lấp đầy toàn bộ chiều cao */
+}
+
+.NavbarLeft li {
+    margin: 0px 10px;
+    width: 100%;
+}
+
+.NavbarLeft button {
+    margin-top: 20px;
+    width: 27vh;
+}
+
+.textHeader {
+    font-size: 50px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.ButtonMenu {
+    padding: 10px 20px 10px 20px;
+    text-align: left;
+    background-color: #6a4029;
+    border: 1px solid #ffff;
+    font-size: 20px;
+    color: antiquewhite;
+    border-radius: 20px;
+}
+
+.ButtonMenu:hover {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
+.hr1{
+    color: white;
+}
+

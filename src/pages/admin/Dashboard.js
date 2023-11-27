@@ -1,20 +1,28 @@
-import React from 'react'
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/footer';
-import DashboardMain from '../../components/authorize/admin/DashboardMain';
 
+import React, { useState } from 'react';
+import NavbarLeft from './NavbarAdmin/NavbarLeft';
+import TaiKhoanQuanTri from './TaiKhoanQuanTri'; //
+import DanhMuc from './DanhMuc'; 
+import ThucDon from './ThucDon'; 
+import KhachHang from './KhachHang'; 
+import './Dashboard.css';
 function Dashboard() {
-  // status navbar
-  const status = {
-      History: "active-nav",
-  }
+  const [selectedComponent, setSelectedComponent] = useState('KhachHang');
+  const handleMenuClick = (component) => {
+    setSelectedComponent(component);
+  };
+
   return (
-    <>
-        <Navbar status={status} />
-        <DashboardMain />
-        <Footer />
-    </>
-  )
+    <div className="dashboard1">
+      <NavbarLeft onMenuClick={handleMenuClick} />
+      <div>
+        {selectedComponent === 'TaiKhoanQuanTri' && <TaiKhoanQuanTri />}
+        {selectedComponent === 'DanhMuc' && <DanhMuc />}
+        {selectedComponent === 'ThucDon' && <ThucDon />}
+        {selectedComponent === 'KhachHang' && <KhachHang />}
+      </div>
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;

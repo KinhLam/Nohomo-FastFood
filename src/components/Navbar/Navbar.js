@@ -40,7 +40,7 @@ const Navbar = ({status}) => {
         {/* Logo */}
         <Link to="/" className="navbar-brand">
           <img src={CoffeeLogo} alt="logo" className="pb-2" />
-          <span className="d-inline ps-2">NoHomo</span>
+          <span className="d-inline ps-2">YANNN COFFEE</span>
         </Link>
 
         {/* List */}

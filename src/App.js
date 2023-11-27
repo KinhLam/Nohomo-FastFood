@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './global.css'
-
+import { useDispatch, useSelector } from 'react-redux';
 import Home from './pages/home/Home';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
@@ -12,14 +12,8 @@ import Payment from './pages/userOnly/Payment';
 import History from './pages/userOnly/History';
 import Profile from './pages/userOnly/Profile';
 import Chat from './pages/userOnly/Chat';
-
+import LoginAdmin from './pages/admin/LoginAdmin';
 import Dashboard from './pages/admin/Dashboard';
-import AddProduct from './pages/admin/AddProduct';
-import EditProduct from './pages/admin/EditProduct';
-import ManageOrder from './pages/admin/ManageOrder.js'
-import AddPromo from './pages/admin/AddPromo.js'
-import EditPromo from './pages/admin/EditPromo.js'
-import ProductList from './pages/admin/ProductList.js'
 
 import InvalidRoute from './pages/InvalidRoute';
 import ScrollToTop from './components/utility/ScrollToTop';
@@ -39,18 +33,8 @@ function App() {
                     <Route path='login' element={<Login />} />
                     <Route path='signup' element={<Signup />} />
                     <Route path='forgotpassword' element={<ForgotPassword />} />
-                    {/* </Route> */}
-
-                    {/* Private Route */}
-                    {/* <Route element={<PrivateRoute />}> */}
-                    {/* <Route element={<AdminOnly />}> */}
-                    <Route path='productlist' element={<ProductList />} />
-                    <Route path='addproducts' element={<AddProduct />} />
-                    <Route path='editproducts/:id' element={<EditProduct />} />
-                    <Route path='addpromo' element={<AddPromo />} />
-                    <Route path='editpromo' element={<EditPromo />} />
-                    <Route path='orderlist' element={<ManageOrder />} />
                     <Route path='dashboard' element={<Dashboard />} />
+                    <Route path='LoginAdmin' element={<LoginAdmin />} />
                     {/* </Route> */}
 
                     {/* <Route element={<UserOnly />}> */}

@@ -19,7 +19,8 @@ function FooterHome() {
                         <div className="col-lg-8 col-9 pt-footer">
                             <Link to="/">
                                 <img src={CoffeeLogo} alt="logo" className="pb-2" />
-                                <p className="d-inline ps-2 footer-name-tag">NoHomo</p>
+                                <p className="d-inline ps-2 footer-name-tag">YANNN
+                                    COFFEE</p>
                             </Link>
                             <p className="mt-3 footer-p">
                                 Coffee Shop is a store that sells some good <br />meals, and especially coffee. We provide
