@@ -27,7 +27,7 @@ const Navbar = ({status}) => {
           <Link to="/" className={status.Home}>Home</Link>
           <Link to="/products" className={status.Product}>Product</Link>
           <Link to="/payment" className={status.Payment}>Your Cart</Link>
-          <Link to="/history" className={status.History}>History</Link>
+          <Link to="/history" className={status.History}>Customer</Link>
         </>
       )
     }

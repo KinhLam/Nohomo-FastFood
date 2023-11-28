@@ -1,72 +1,82 @@
-import React, { useEffect } from 'react'
-import './main.css'
-import { Link } from 'react-router-dom'
-import CardHistory from './cardHistory.js'
-import axios from 'axios'
+
+import React, { useState } from 'react';
+import './main.css';
+import { Link } from 'react-router-dom';
+import CardHistory from './cardHistory'; 
+import UpdateInfoModal from './UpdateInfoModal';
 
 function Main() {
-    const url = process.env.REACT_APP_HOST
-
-    const userId = (JSON.parse(localStorage.getItem('productOrder'))).id
-    const title = (JSON.parse(localStorage.getItem('productOrder'))).title
-    const price = parseInt(localStorage.getItem('productPrice'))
-    const quantity = localStorage.getItem('quantity')
-    const taxvalue = (price * 0.1)
-    const totalprice = (price + taxvalue)
-
-    useEffect(() => {
-        handleOrder()
-    }, [])
+    // Retrieve product order details from localStorage
+    const productOrder = JSON.parse(localStorage.getItem('productOrder')) || {};
     
-    const handleOrder = async () => {
-        // const body = new FormData();
-        const body = new URLSearchParams()
-        body.append('id_user', userId)
-        body.append('title', title);
-        body.append('quantity', quantity);
-        body.append('price', totalprice.toFixed(3));
+    // Extract relevant information from the product order
+    const userId = productOrder.id || '';
+    const title = productOrder.title || '';
+    const price = parseInt(localStorage.getItem('productPrice')) || 0;
+    const quantity = localStorage.getItem('quantity') || 0;
+    const taxValue = price * 0.1;
+    const totalprice = price + taxValue;
 
-        try {
-            await axios.post(`${url}/api/order`, body, {
-                method: 'POST',
-                headers: {
-                    'Content-type': 'application/x-www-form-urlencoded',
-                }
-            })
-        } catch (error) {
-            console.log(error.response.data.message);
-        }
-    }
+    // State variables for handling modals
+    const [showUpdateModal, setShowUpdateModal] = useState(false);
+    const [showHistoryModal, setShowHistoryModal] = useState(false);
+
+    // Functions to handle modal visibility
+    const handleUpdateClick = () => {
+        setShowUpdateModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowUpdateModal(false);
+    };
+
+    const handleViewHistoryClick = () => {
+        setShowHistoryModal(true);
+    };
+
+    const handleCloseHistoryModal = () => {
+        setShowHistoryModal(false);
+    };
+
     return (
         <main style={{ marginTop: '6rem' }}>
+            {/* Hero section with buttons for updating information and viewing history */}
             <div className="p-5 bg-primary text-white hero-history">
-                <div className="row">
-                    <div className="col text-center mt-4">
-                        <h3 className="s-4-history">Let’s see what you have bought!</h3>
-                        <p className="s-5-history">Select item to delete</p>
+                <div className="row mt-3">
+                    <div className="col text-end">
+                        <button className="btn btn-outline-light" onClick={handleUpdateClick} style={{ color: 'black' }}>
+                            Cập nhật thông tin
+                        </button>
+                        <button className="btn btn-outline-light ms-2" onClick={handleViewHistoryClick} style={{ color: 'black' }}>
+                            Xem lịch sử mua hàng
+                        </button>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col text-end mt-3 select-all-history">
-                        <Link to="#">
-                            <p>Select All</p>
-                        </Link>
-                    </div>
+
+                {/* Display personal information */}
+                <div className="mt-4">
+                    <h3>Thông tin cá nhân:</h3>
+                    <p><strong>User ID:</strong> {userId}</p>
+                    <p><strong>Name:</strong> {productOrder.name}</p>
+                    <p><strong>Email:</strong> {productOrder.email}</p>
+                    <p><strong>Phone Number:</strong> {productOrder.phoneNumber}</p>
+                    <p><strong>Birth Date:</strong> {productOrder.birthDate}</p>
                 </div>
-                {/* CARD START!! */}
-                <div className="container-fluid">
-                    <div className="row mt-5">
-                        <div className="col">
-                            <div className="row row-cols-1 row-cols-md-3 g-4">
-                                <CardHistory />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* CARD END!! */}
             </div>
+
+            {/* Modals for updating information and viewing history */}
+            <UpdateInfoModal
+                show={showUpdateModal}
+                handleClose={handleCloseModal}
+                userId={userId}
+                currentName={productOrder.name}
+                currentEmail={productOrder.email}
+                currentPhoneNumber={productOrder.phoneNumber}
+                currentBirthDate={productOrder.birthDate}
+            />
+            <CardHistory show={showHistoryModal} handleClose={handleCloseHistoryModal} userId={userId} />
         </main>
-    )
+    );
 }
 
-export default Main
+export default Main;
