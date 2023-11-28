@@ -1,10 +1,10 @@
 import React from 'react';
 
 function CardHistory() {
-    // Retrieve data from local storage
+     // Lấy dữ liệu từ local storage
     const orders = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
 
-    // Render the card for each order
+    /// Render các thẻ (card) cho mỗi đơn hàng
     return (
         <div className="row">
             {orders.map((order, index) => (
@@ -12,6 +12,7 @@ function CardHistory() {
                     <div className="card card-style-history">
                         <div className="row">
                             <div className="col-4">
+                            // Hiển thị hình ảnh sản phẩm 
                                 <img src={order.productImage} className="img-product-history" alt="Product" style={{ marginTop: '0.5rem' }} />
                             </div>
                             <div className="col">

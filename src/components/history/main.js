@@ -6,10 +6,10 @@ import CardHistory from './cardHistory';
 import UpdateInfoModal from './UpdateInfoModal';
 
 function Main() {
-    // Retrieve product order details from localStorage
+// Lấy thông tin đơn hàng từ localStorage
     const productOrder = JSON.parse(localStorage.getItem('productOrder')) || {};
     
-    // Extract relevant information from the product order
+   // Trích xuất thông tin liên quan từ đơn hàng
     const userId = productOrder.id || '';
     const title = productOrder.title || '';
     const price = parseInt(localStorage.getItem('productPrice')) || 0;
@@ -17,11 +17,11 @@ function Main() {
     const taxValue = price * 0.1;
     const totalprice = price + taxValue;
 
-    // State variables for handling modals
+    // Các biến trạng thái để quản lý modals
     const [showUpdateModal, setShowUpdateModal] = useState(false);
     const [showHistoryModal, setShowHistoryModal] = useState(false);
 
-    // Functions to handle modal visibility
+    // Các hàm để xử lý sự kiện hiển thị modals
     const handleUpdateClick = () => {
         setShowUpdateModal(true);
     };
@@ -40,20 +40,20 @@ function Main() {
 
     return (
         <main style={{ marginTop: '6rem' }}>
-            {/* Hero section with buttons for updating information and viewing history */}
+            {/*Phần hero với nút để cập nhật thông tin và xem lịch sử */}
             <div className="p-5 bg-primary text-white hero-history">
                 <div className="row mt-3">
                     <div className="col text-end">
-                        <button className="btn btn-outline-light" onClick={handleUpdateClick} style={{ color: 'black' }}>
+                        <button className="btn btn-outline-light" onClick={handleUpdateClick} style={{ color: 'white' }}>
                             Cập nhật thông tin
                         </button>
-                        <button className="btn btn-outline-light ms-2" onClick={handleViewHistoryClick} style={{ color: 'black' }}>
+                        <button className="btn btn-outline-light ms-2" onClick={handleViewHistoryClick} style={{ color: 'white' }}>
                             Xem lịch sử mua hàng
                         </button>
                     </div>
                 </div>
 
-                {/* Display personal information */}
+                {/* Hiển thị thông tin cá nhân*/}
                 <div className="mt-4">
                     <h3>Thông tin cá nhân:</h3>
                     <p><strong>User ID:</strong> {userId}</p>
@@ -64,7 +64,7 @@ function Main() {
                 </div>
             </div>
 
-            {/* Modals for updating information and viewing history */}
+            {/* Modals để cập nhật thông tin và xem lịch sử */}
             <UpdateInfoModal
                 show={showUpdateModal}
                 handleClose={handleCloseModal}

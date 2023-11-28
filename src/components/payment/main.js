@@ -48,7 +48,7 @@ function Main() {
                 <div className="col d-none d-lg-block">
                     <div className="row">
                         <div className="col">
-                            <h3 className="s-1-payment" style={{ margin: '55px 0 0 85px' }}>Tóm tắt giỏ hàng</h3>
+                            <h3 className="s-1-payment" style={{ margin: '55px 0 0 85px', color: 'white' }}>Tóm tắt giỏ hàng</h3>
                             {cartItems.map((item, index) => (
                                 <div key={index} className="row mt-5">
                                     <div className="col">
@@ -90,7 +90,7 @@ function Main() {
                         </div>
                     </div>
                     <Link to="/payment">
-                        <button className="btn btn-primary payment mt-3">Xác nhận và Thanh toán</button>
+                        <button className="btn btn-primary payment mt-3">Xác nhận và thanh toán</button>
                     </Link>
                 </div>
                 <div className="col d-block d-lg-none mt-4">
