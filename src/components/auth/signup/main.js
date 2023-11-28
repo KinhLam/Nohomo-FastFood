@@ -37,8 +37,8 @@ function MainSignup() {
             },
         }).then((res) => {
             console.log(res);
-            //alert(res.data.data)
-            //navigate('/login')
+            alert("Đăng ký tài khoản thành công, mời bạn đăng nhập!")
+            navigate('/login')
         }).catch((err) => {
             console.log(err);
             //setValidate({ error: true, message: err.response.data.errors })

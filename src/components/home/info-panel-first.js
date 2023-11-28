@@ -12,18 +12,18 @@ function InfoPanelFirst() {
                         <div className="col-3 col-lg panel-first-mobile">
                             <img src={Staff} alt="icon" className="float-lg-start" />
                             <h4>90+</h4>
-                            <p>Staff</p>
+                            <p>Nhân viên</p>
                         </div>
                         <div className="col-3 col-lg panel-first-mobile">
                             <img src={Stores} alt="icon" className="float-lg-start" />
                             <h4>30+</h4>
-                            <p>Stores</p>
+                            <p>Cửa hàng</p>
                             <div className="vertical-line d-none d-lg-block" />
                         </div>
                         <div className="col-3 col-lg panel-first-mobile">
                             <img src={Customers} alt="icon" className="float-lg-start" />
                             <h4>800+</h4>
-                            <p>Customers</p>
+                            <p>Khách hàng</p>
                             <div className="vertical-line d-none d-lg-block" />
                         </div>
                     </div>
