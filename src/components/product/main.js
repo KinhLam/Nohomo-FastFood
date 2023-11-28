@@ -19,8 +19,8 @@ const urlImage = process.env.REACT_APP_IMG
 
 function Main() {
     // Load data product
-    // const [dataProduct, setDataProduct] = useState([])
-  const [monAns, setMonAns] = useState([]);
+    const [dataProduct, setDataProduct] = useState([])
+//   const [monAns, setMonAns] = useState([]);
 
     // Load search data product
     const [searchData, setSearchData] = useState([]);
@@ -30,20 +30,26 @@ function Main() {
     const [currentPage, setCurrentPage] = useState(1)
 
     // get data product
-  useEffect(() => {
-    const fetchData = async () => {
+    useEffect(() => {
+        const fetchData = async () => {
+          
+         
       try {
-        const response = await axios.get(`${url}/api/MonAns`);
-        // axios automatically throws an error for non-2xx responses, so no need for explicit check
-
-        setMonAns(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+            const response = await axios.get(`${url}/api/MonAns`);
+            // axios automatically throws an error for non-2xx responses, so no need for explicit check
+      
+            // Set main data state
+            setDataProduct(response.data);
+      
+            // Set search data state
+            setSearchData(response.data);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+      
+        fetchData();
+      }, []);
 
     // get sort data product - Sắp xếp
     // const handleSort = async (e) => {
@@ -139,7 +145,7 @@ function Main() {
 
     // Handle server error or data not found!
     const isLoad = () => {
-        if (monAns.length === 0) {
+        if (dataProduct.length === 0) {
             return (<LoadingProduct />)
         } else if (searchData.length === 0) {
             return (<DataNotFound />)
@@ -150,17 +156,17 @@ function Main() {
         return (
             <div className="container" style={{ marginTop: '-1rem' }}>
                 <div className="row row-cols-1 row-cols-md-4 g-4 mt-5">
-                    {searchData.length === 0 ? isLoad() : searchData.map((monAn) => {
+                    {searchData.length === 0 ? isLoad() : dataProduct.map((monAn) => {
                         // Use the anhMonAn property to set the image source
-                        const imgSrc = monAn.anhMonAn ? `${urlImage}/${monAn.anhMonAn}` : 'placeholder-image-url';
+                        const imgSrc = monAn.anhMonAn ? `${urlImage}/${monAn.anhMonAn}` : 'default-image-url';
     
                         return (
                             <div key={monAn.maMon} className="col-lg-3 col-6 text-start my-5 popup">
                                 <Link to={`/products/detail/${monAn.maMon}`}>
                                     <div className="card card-product" style={{ height: '212px', width: '156px' }}>
-                                        <img src={imgSrc} alt="product" className="card-img-product" style={{ margin: '-40px 0 0 -35px' }} />
+                                        {/* <img src={imgSrc} alt="product" className="card-img-product" style={{ margin: '-40px 0 0 -35px' }} /> */}
                                         <div className="card-body text-center">
-                                            <h5 className="card-title-product" style={{ marginTop: '-100px' }}>{monAn.tenMon}</h5>
+                                            <h5 className="card-title-product" style={{ marginTop: '50px' }}>{monAn.tenMon}</h5>
                                             <p className="s-4-product" style={{ marginTop: '-10px' }}>{monAn.giaBan}</p>
                                         </div>
                                     </div>
