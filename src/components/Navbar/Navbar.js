@@ -11,14 +11,14 @@ const Navbar = ({status}) => {
 
   // Conditional rendering navbar (admin or user)
   const isAdmin = () => {
-    const role = localStorage.getItem('@userRole')
-    if (role === 'admin') {
+    const role = localStorage.getItem('@quanTriVien')
+    if (role === 'true') {
       return (
         <>
           <Link to="/" className={status.Home}>Trang chủ</Link>
           <Link to="/products" className={status.Product}>Thực đơn</Link>
-          <Link to="/orderlist" className={status.Payment}>Order</Link>
-          <Link to="/dashboard" className={status.History}>Dashboard</Link>
+          <Link to="/orderlist" className={status.Payment}>Đơn hàng</Link>
+          <Link to="/dashboard" className={status.History}>Quản trị</Link>
         </>
       )
     } else {
@@ -27,7 +27,7 @@ const Navbar = ({status}) => {
           <Link to="/" className={status.Home}>Trang chủ</Link>
           <Link to="/products" className={status.Product}>Thực đơn</Link>
           <Link to="/payment" className={status.Payment}>Giỏ hàng</Link>
-          {/* <Link to="/history" className={status.History}>History</Link> */}
+          <Link to="/history" className={status.History}>Khách hàng</Link>
         </>
       )
     }
@@ -46,7 +46,7 @@ const Navbar = ({status}) => {
         {/* List */}
         <div className={`nav-items ${isOpen && "open"}`}>
           {isAdmin()}
-          {localStorage.getItem('@userLogin') ? ('') : (
+          {localStorage.getItem('@tenTaiKhoan') ? ('') : (
             <div className="auth-nav-items-mobile mx-auto">
               <Link to="/login" className="d-block d-sm-none d-md-none d-lg-none btn btn-light login-mobile mb-2 py-2 ">Đăng nhập</Link>
               <Link to="/signup" className="d-block d-sm-none d-md-none d-lg-none btn btn-warning signup-mobile py-2 ">Đăng ký</Link>
@@ -55,7 +55,7 @@ const Navbar = ({status}) => {
         </div>
 
         {/* Auth Render*/}
-        {localStorage.getItem('@userLogin') ? (<Authenticated />) : (<Unauthenticated />)}
+        {localStorage.getItem('@tenTaiKhoan') ? (<Authenticated />) : (<Unauthenticated />)}
 
         {/* Hamburger button */}
         <div

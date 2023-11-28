@@ -7,8 +7,8 @@ function SectionFour() {
                 <div className="container">
                     <div className="row text-center">
                         <div className="col">
-                            <h4 className="typo-primary">Visit Our Store in the Spot on the Map Below</h4>
-                            <p className="typo-secondary">See our store in every city on the spot and spen your good day there. See you soon!</p>
+                            <h4 className="typo-primary">Ghé thăm cửa hàng của chúng tôi</h4>
+                            <p className="typo-secondary">Hẹn gặp bạn tại một trong những cửa hàng của chúng tôi trên toàn thế giới!</p>
                         </div>
                     </div>
                     <div className="hero-map mobile" />

@@ -5,8 +5,9 @@ import InfoPanel from '../../components/auth/infopanel'
 import { useNavigate } from 'react-router-dom'
 
 function Login() {
-    // Ini digunakan untuk private route, ketika user sudah login maka tidak bisa lagi ke login page
     const navigate = useNavigate()
+
+    // Nếu đã đăng nhập thì chuyển qua trang sản phẩm
     useEffect(() => {
         if (localStorage.getItem('@userLogin')) {
             navigate('/products')

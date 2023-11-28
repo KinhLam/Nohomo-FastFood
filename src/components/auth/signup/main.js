@@ -6,28 +6,42 @@ import GoogleLogo from "../../../assets/login/googleLogo.svg"
 import axios from 'axios'
 
 function MainSignup() {
-    const url = process.env.REACT_APP_HOST
+    const url = "https://localhost:44301"
     const [signupForm, setSignupForm] = useState({
+        hoTen: '',
+        tenTaiKhoan: '',
         email: '',
-        password: '',
-        mobile_number: ''
+        matkhau: '',
     })
     const [validate, setValidate] = useState({ error: false, message: '' })
     const navigate = useNavigate()
 
     const handleSignup = async (event) => {
         event.preventDefault()
+
+        //bỏ input vào data, từ json chuyển nó thành kiểu string
+        let data = JSON.stringify({
+            TenTaiKhoan: signupForm.tenTaiKhoan,
+            MatKhau: signupForm.matkhau,
+            Email: signupForm.email,
+            HoTen: signupForm.hoTen
+        })
+
         return await axios({
-            url: `${url}/api/auth/register`,
+            url: `${url}/api/DangNhapKy`,
             method: 'POST',
-            data: signupForm
+            data: data,
+            maxBodyLength: Infinity,
+            headers: {
+                'Content-Type': 'application/json'
+            },
         }).then((res) => {
-            // console.log(res.data.data);
-            alert(res.data.data)
+            console.log(res);
+            alert("Đăng ký tài khoản thành công, mời bạn đăng nhập!")
             navigate('/login')
         }).catch((err) => {
-            // console.log(err);
-            setValidate({ error: true, message: err.response.data.errors })
+            console.log(err);
+            //setValidate({ error: true, message: err.response.data.errors })
         })
     }
 
@@ -52,7 +66,7 @@ function MainSignup() {
                                             <p className="d-inline ps-2 s-lg-auth">NO HOMO</p>
                                         </Link>
                                         <Link to="/login">
-                                            <div className="btn btn-warning signup-nav rounded-pill px-4 py-2 s-md-auth" style={{ fontSize: '16px' }}><p style={{ marginTop: '2px' }}>Login</p></div>
+                                            <div className="btn btn-warning signup-nav rounded-pill px-4 py-2 s-md-auth" style={{ fontSize: '16px' }}><p style={{ marginTop: '2px' }}>Đăng nhập</p></div>
                                         </Link>
                                     </div>
                                 </nav>
@@ -71,7 +85,7 @@ function MainSignup() {
                                             <div className="col-5">
                                                 <Link to="/login">
                                                     <div className="btn btn-warning signup-nav rounded-pill py-2 s-md-auth" style={{ fontSize: '16px' }}>
-                                                        <p style={{ marginTop: '2px' }}>Login</p>
+                                                        <p style={{ marginTop: '2px' }}>Đăng nhập</p>
                                                     </div>
                                                 </Link>
                                             </div>
@@ -85,7 +99,7 @@ function MainSignup() {
                     <div className="container w-75">
                         <div className="row">
                             <div className="col text-center form-title-auth pt-5">
-                                <h3>Sign Up</h3>
+                                <h3>Đăng ký</h3>
                             </div>
                         </div>
                         {/* FORM START */}
@@ -96,41 +110,49 @@ function MainSignup() {
                                 </div>
                             )}
                             <div className="mb-3">
-                                <label htmlFor="exampleInputEmail1" className="form-label s-md-auth">Email Address :</label>
-                                <input name="email" type="email" className="form-control py-3" id="emailSignUp" aria-describedby="emailHelp" placeholder="Enter your email adress" 
+                                <label htmlFor="exampleInputEmail1" className="form-label s-md-auth">Họ và tên:</label>
+                                <input name="hoTen" type="text" className="form-control py-3" id="hoTenSignUp" aria-describedby="emailHelp" placeholder="Nhập họ tên"
+                                    onChange={(e) => setSignupForm({
+                                        ...signupForm,
+                                        hoTen: e.target.value
+                                    })} />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="exampleInputEmail1" className="form-label s-md-auth">Tên tài khoản:</label>
+                                <input name="tenTaiKhoan" type="text" className="form-control py-3" id="tenTaiKhoanSignUp" aria-describedby="emailHelp" placeholder="Nhập tên tài khoản"
+                                    onChange={(e) => setSignupForm({
+                                        ...signupForm,
+                                        tenTaiKhoan: e.target.value
+                                    })} />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="exampleInputEmail1" className="form-label s-md-auth">Địa chỉ email:</label>
+                                <input name="email" type="email" className="form-control py-3" id="emailSignUp" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email"
                                     onChange={(e) => setSignupForm({
                                         ...signupForm,
                                         email: e.target.value
-                                    })}/>
+                                    })} />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label s-md-auth">Password :</label>
-                                <input name="password" type="password" className="form-control py-3" id="passwordSignUp" placeholder="Enter your password" 
+                                <label htmlFor="exampleInputPassword1" className="form-label s-md-auth">Mật khẩu:</label>
+                                <input name="matKhau" type="password" className="form-control py-3" id="matKhauSignUp" placeholder="Nhập mật khẩu"
                                     onChange={(e) => setSignupForm({
                                         ...signupForm,
-                                        password: e.target.value
-                                    })}/>
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label s-md-auth">Phone Number :</label>
-                                <input name="mobileNumber" type="number" className="form-control py-3" id="mobileNumberSignUp" placeholder="Enter your phone number" 
-                                    onChange={(e) => setSignupForm({
-                                        ...signupForm,
-                                        mobile_number: e.target.value
-                                    })}/>
+                                        matKhau: e.target.value
+                                    })} />
                             </div>
                             <div className="mb-3 form-check" />
                             {/* desktop version */}
-                            <input type="submit" value="Sign Up" className="btn btn-warning auth rounded-4 s-lg-auth py-4 input-signup d-none d-lg-block" style={{ fontSize: '20px' }} />
+                            <input type="submit" value="Đăng ký" className="btn btn-warning auth rounded-4 s-lg-auth py-4 input-signup d-none d-lg-block" style={{ fontSize: '20px' }} />
                             {/* mobile version */}
-                            <input type="submit" value="Sign Up" className="btn btn-warning auth rounded-4 s-lg-auth py-3 d-lg-none" style={{ fontSize: '20px', width: '70vw' }} />
+                            <input type="submit" value="Đăng ký" className="btn btn-warning auth rounded-4 s-lg-auth py-3 d-lg-none" style={{ fontSize: '20px', width: '70vw' }} />
                             {/* desktop version */}
                             <div className="row d-none d-lg-block">
                                 <div className="col mt-4">
                                     <Link to="#">
                                         <div className="btn btn-light d-flex rounded-4">
                                             <img src={GoogleLogo} alt="google" style={{ marginLeft: '120px' }} />
-                                            <p className="s-1-auth" style={{ marginTop: '19px', marginLeft: '10px' }}>Sign up with Google</p>
+                                            <p className="s-1-auth" style={{ marginTop: '19px', marginLeft: '10px' }}>Đăng ký bằng Google</p>
                                         </div>
                                     </Link>
                                 </div>
@@ -141,7 +163,7 @@ function MainSignup() {
                                     <Link to="#">
                                         <div className="btn btn-light d-flex rounded-4">
                                             <img src={GoogleLogo} alt="google" style={{ marginLeft: '20px' }} />
-                                            <p className="s-1-auth" style={{ marginTop: '19px', marginLeft: '10px' }}>Sign Up with Google</p>
+                                            <p className="s-1-auth" style={{ marginTop: '19px', marginLeft: '10px' }}>Đăng ký bằng Google</p>
                                         </div>
                                     </Link>
                                 </div>
