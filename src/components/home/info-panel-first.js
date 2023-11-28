@@ -11,19 +11,19 @@ function InfoPanelFirst() {
                     <div className="row">
                         <div className="col-3 col-lg panel-first-mobile">
                             <img src={Staff} alt="icon" className="float-lg-start" />
-                            <h4>90+</h4>
-                            <p>Staff</p>
+                            <h4>5</h4>
+                            <p>Thành viên</p>
                         </div>
                         <div className="col-3 col-lg panel-first-mobile">
                             <img src={Stores} alt="icon" className="float-lg-start" />
-                            <h4>30+</h4>
-                            <p>Stores</p>
+                            <h4>K20</h4>
+                            <p>Đại học Lạc Hồng</p>
                             <div className="vertical-line d-none d-lg-block" />
                         </div>
                         <div className="col-3 col-lg panel-first-mobile">
                             <img src={Customers} alt="icon" className="float-lg-start" />
-                            <h4>800+</h4>
-                            <p>Customers</p>
+                            <h4>+++++</h4>
+                            <p>Web ReactJs</p>
                             <div className="vertical-line d-none d-lg-block" />
                         </div>
                     </div>

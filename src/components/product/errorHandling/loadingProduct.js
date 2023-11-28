@@ -10,7 +10,7 @@ function LoadingProduct() {
           <img src={coffeeLoading} alt='loading' className='coffee-loading gif' />
         </div>
         <div className='col'>
-          <h4 className='text-loading'>Loading...</h4>
+          <h4 className='text-loading' style={{width: '150px'}}>Đang tải...</h4>
         </div>
       </div>
     </div>

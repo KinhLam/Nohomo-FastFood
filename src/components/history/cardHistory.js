@@ -1,34 +1,35 @@
-import React from 'react'
-// import Product from "../../assets/history/product.svg"
+import React from 'react';
 
 function CardHistory() {
-    const img = localStorage.getItem('productImage')
-    const title = JSON.parse(localStorage.getItem('productOrder')).title
-    const price = localStorage.getItem('totalPrice')
+     // Lấy dữ liệu từ local storage
+    const orders = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+
+    /// Render các thẻ (card) cho mỗi đơn hàng
     return (
-        [1].map(() => {
-            return (
-                <div className="col-lg-4 col-6">
+        <div className="row">
+            {orders.map((order, index) => (
+                <div key={index} className="col-lg-4 col-6">
                     <div className="card card-style-history">
                         <div className="row">
                             <div className="col-4">
-                                <img src={img} className="img-product-history" alt="..." style={{marginTop: '0.5rem'}}/>
+                            // Hiển thị hình ảnh sản phẩm 
+                                <img src={order.productImage} className="img-product-history" alt="Product" style={{ marginTop: '0.5rem' }} />
                             </div>
                             <div className="col">
                                 <div className="row" style={{ paddingTop: '20px' }}>
                                     <div className="col">
-                                        <h4 className="s-1-history">{title}</h4>
+                                        <h4 className="s-1-history">{order.title}</h4>
                                     </div>
                                     <div className="row">
                                         <div className="col">
-                                            <p className="s-2-history">IDR {price}</p>
-                                            <p className="s-3-history">Delivered</p>
+                                            <p className="s-2-history">IDR {order.totalPrice}</p>
+                                            <p className="s-3-history">Status: {order.status}</p>
                                         </div>
                                         {/* Checkbox start */}
                                         <div className="col-2 form-check-position">
                                             <div className="form-check">
-                                                <input className="form-check-input" type="checkbox" defaultValue id="flexCheckDefault" />
-                                                <label className="form-check-label" htmlFor="flexCheckDefault" />
+                                                <input className="form-check-input" type="checkbox" defaultValue id={`flexCheckDefault${index}`} />
+                                                <label className="form-check-label" htmlFor={`flexCheckDefault${index}`} />
                                             </div>
                                         </div>
                                         {/* Checkbox end */}
@@ -38,9 +39,10 @@ function CardHistory() {
                         </div>
                     </div>
                 </div>
-            )
-        })
-    )
+            ))}
+        </div>
+    );
 }
 
-export default CardHistory
+export default CardHistory;
+

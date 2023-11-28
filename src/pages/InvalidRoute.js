@@ -8,9 +8,9 @@ function InvalidRoute() {
             <img src={errorLoading} alt="CoffeeLoading" style={{ width: '250px', height: '250px' }} />
             <h1>Oops!</h1>
             <p>
-                <i>404 Not Found</i>
+                <i>404 Không Tìm Thấy</i>
             </p>
-            <p>Sorry, We can't find the page you're looking for.</p>
+            <p>Xin lỗi, chúng tôi không tìm được trang bạn muốn tới.</p>
             <Link to="/">
                 <button className="btn btn-warning px-5 py-3" style={{ fontWeight: '500', borderRadius: '20px' }}>Go to Home</button>
             </Link>
