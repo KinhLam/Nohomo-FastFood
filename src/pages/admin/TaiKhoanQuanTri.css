@@ -1,0 +1,16 @@
+/* Thêm vào file CSS của bạn hoặc tạo một file CSS mới và import vào component */
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 50px;
+    border: 1px solid #ccc;
+    max-width: 80%; /* hoặc kích thước tối đa mà bạn muốn */
+    max-height: 80vh; /* hoặc kích thước tối đa mà bạn muốn */
+    overflow: auto;
+  }
+  
+  /* Cài đặt các thuộc tính cần thiết cho modal (position, padding, border, ...) */
+  

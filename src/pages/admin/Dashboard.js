@@ -5,6 +5,7 @@ import TaiKhoanQuanTri from './TaiKhoanQuanTri'; //
 import DanhMuc from './DanhMuc'; 
 import ThucDon from './ThucDon'; 
 import KhachHang from './KhachHang'; 
+import DonDatHang from './DonDatHang';
 import './Dashboard.css';
 function Dashboard() {
   const [selectedComponent, setSelectedComponent] = useState('KhachHang');
@@ -20,6 +21,7 @@ function Dashboard() {
         {selectedComponent === 'DanhMuc' && <DanhMuc />}
         {selectedComponent === 'ThucDon' && <ThucDon />}
         {selectedComponent === 'KhachHang' && <KhachHang />}
+        {selectedComponent === 'DonDatHang' && <DonDatHang />}
       </div>
     </div>
   );

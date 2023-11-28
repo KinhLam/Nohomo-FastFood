@@ -26,6 +26,11 @@ function NavbarLeft({ onMenuClick }) {
           </button>
         </li>
         <li>
+          <button type="button" className="ButtonMenu" onClick={() => onMenuClick('DonDatHang')}>
+            Đơn đặt hàng
+          </button>
+        </li>
+        <li>
           <button type="button" className="ButtonMenu" onClick={() => onMenuClick('KhachHang')}>
             Khách hàng
           </button>
