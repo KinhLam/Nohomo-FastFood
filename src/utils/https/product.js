@@ -1,39 +1,39 @@
-import axios from 'axios';
-const url = process.env.REACT_APP_HOST + 'api/products';
+// import axios from 'axios';
 
-export const searchList = (filter) => {
-    const urlSearch = url + '/search' + filter;
-    return axios.get(urlSearch);
-};
+// const url = 'https://localhost:44301/api/MonAn'; // Đã chỉnh sửa thành '/MonAn' thay vì '/MonAns'
 
-export const addProduct = (body, token) => {
-    return axios.post(url, body, {
-        headers: {
-            'x-access-token': token,
-        },
-    });
-};
+// export const searchList = (filter) => {
+//     const urlSearch = `${url}?search=${filter}`; // Chỉnh sửa URL search
+//     return axios.get(url);
+// };
 
-export const updateProduct = (body, token) => {
-    return axios.patch(url, body, {
-        headers: {
-            'x-access-token': token,
-        },
-    });
-};
+// export const addProduct = (body, token) => {
+//     return axios.post(url, body, {
+//         headers: {
+//             'x-access-token': token,
+//         },
+//     });
+// };
 
-export const getDetailProduct = (id) => {
-    const urlDetail = `${url}/${id}`
-    return axios.get(urlDetail);
-}
+// export const updateProduct = (id, body, token) => {
+//     const urlUpdate = `${url}/${id}`; // Chỉnh sửa URL update
+//     return axios.put(urlUpdate, body, {
+//         headers: {
+//             'x-access-token': token,
+//         },
+//     });
+// };
 
-export const deleteProducts = (id, token) => {
-    return axios.delete(url, {
-        headers: {
-            'x-access-token': token,
-        },
-        data: {
-            id,
-        },
-    });
-};
+// export const getDetailProduct = (id) => {
+//     const urlDetail = `${url}/${id}`;
+//     return axios.get(urlDetail);
+// };
+
+// export const deleteProducts = (id, token) => {
+//     const urlDelete = `${url}/${id}`; // Chỉnh sửa URL delete
+//     return axios.delete(urlDelete, {
+//         headers: {
+//             'x-access-token': token,
+//         },
+//     });
+// };
