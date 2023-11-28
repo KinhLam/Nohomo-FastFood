@@ -8,40 +8,40 @@ function MainForgot() {
             <div className="p-5 bg-primary text-white hero-forgot">
                 <div className="row">
                     <div className="col text-center mt-4">
-                        <h3 style={{ fontWeight: 700, fontStyle: 'normal', fontSize: '44px', marginTop: '-10px' }}>Forgot your password?</h3>
-                        <p style={{ fontWeight: 700, fontStyle: 'normal', fontSize: '18px' }}>Don’t worry, we got your back!</p>
+                        <h3 style={{ fontWeight: 700, fontStyle: 'normal', fontSize: '44px', marginTop: '-10px' }}>Bạn quên mật khẩu rồi?</h3>
+                        <p style={{ fontWeight: 700, fontStyle: 'normal', fontSize: '18px' }}>Yên tâm, để chúng tôi giúp bạn!</p>
                     </div>
                 </div>
                 {/* desktop version */}
                 <div className="row d-none d-lg-flex" style={{ marginTop: '4.3rem' }}>
                     <div className="col-1" />
                     <div className="col-7">
-                        <input type="email" className="form-control-forgot py-3" id="emailForgot" aria-describedby="emailHelp" placeholder="Enter your email adress to get link" />
+                        <input type="email" className="form-control-forgot py-3" id="emailForgot" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email để nhận liên kết khôi phục tài khoản" />
                     </div>
                     <div className="col-3" style={{ marginLeft: '3rem' }}>
-                        <Link to="/forgotpassword"><button className="btn btn-warning forgot send" onclick="getData()">Send</button></Link>
+                        <Link to="/forgotpassword"><button className="btn btn-warning forgot send" onclick="getData()">Gửi</button></Link>
                     </div>
                     <div className="col-1" />
                 </div>
                 {/* mobile version */}
                 <div className="row d-lg-none" style={{ marginTop: '4.7rem' }}>
                     <div className="col-7" style={{ marginLeft: '-4rem' }}>
-                        <input type="email" className="form-control-forgot py-3" id="emailForgotMobile" aria-describedby="emailHelp" placeholder="Enter your email adress to get link" />
+                        <input type="email" className="form-control-forgot py-3" id="emailForgotMobile" aria-describedby="emailHelp" placeholder="Nhập địa chỉ email để nhận liên kết khôi phục tài khoản" />
                     </div>
                     <div className="col-3" style={{ marginLeft: '4rem' }}>
-                        <Link to="/forgotpassword"><button className="btn btn-warning forgot send" onclick="getDataMobile()" style={{ width: '7rem' }}>Send</button></Link>
+                        <Link to="/forgotpassword"><button className="btn btn-warning forgot send" onclick="getDataMobile()" style={{ width: '7rem' }}>Gửi</button></Link>
                     </div>
                 </div>
                 <div className="row" style={{ marginTop: '75px' }}>
                     <div className="col text-center">
-                        <h3 style={{ fontWeight: 700, fontStyle: 'normal', fontSize: '18px', lineHeight: '45px' }}>Click here if you didn’t receive any link in <br />2 minutes</h3>
+                        <h3 style={{ fontWeight: 700, fontStyle: 'normal', fontSize: '18px', lineHeight: '45px' }}>Nhấn vào đây nếu bạn không nhận được liên kết nào sau<br/> 2 phút</h3>
                     </div>
                 </div>
                 {/* desktop version */}
                 <div className="row d-none d-lg-block" style={{ marginTop: '10px' }}>
                     <div className="col text-center">
                         <div className="btn btn-primary forgot resend">
-                            <p style={{ marginTop: '20px' }}>Resend Link</p>
+                            <p style={{ marginTop: '20px' }}>Gửi lại liên kết</p>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ function MainForgot() {
                 <div className="row d-lg-none" style={{ marginTop: '10px' }}>
                     <div className="col text-center">
                         <div className="btn btn-primary forgot forgot">
-                            <p style={{ marginTop: '20px' }}>Resend Link</p>
+                            <p style={{ marginTop: '20px' }}>Gửi lại liên kết</p>
                         </div>
                     </div>
                 </div>

@@ -7,9 +7,9 @@ const Unauthenticated = () => {
             {/* Desktop */}
             <div className="auth-nav-items-desktop">
                 <div className="me-4 d-none d-sm-block d-md-block d-lg-block">
-                    <Link to="/login"><p className="nav-login">Login</p></Link>
+                    <Link to="/login"><p className="nav-login">Đăng nhập</p></Link>
                 </div>
-                <Link to="/signup" className="d-none d-sm-block d-md-block d-lg-block" style={{ color: '#6A4029', marginTop: '0.3rem' }}><div className="btn btn-warning sign-up"><p style={{ marginTop: '4px' }}>Sign Up</p></div></Link>
+                <Link to="/signup" className="d-none d-sm-block d-md-block d-lg-block" style={{ color: '#6A4029', marginTop: '0.3rem' }}><div className="btn btn-warning sign-up"><p style={{ marginTop: '4px' }}>Đăng ký</p></div></Link>
                 <div style={{ paddingLeft: '0.7rem', marginTop: '0.25rem' }}>
                     <DarkMode />
                 </div>

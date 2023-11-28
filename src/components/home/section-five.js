@@ -14,7 +14,7 @@ function SectionFive() {
             <div className="container">
                 <div className="row text-center">
                     <div className="col">
-                        <h4 className="typo-primary">Our Partner</h4>
+                        <h4 className="typo-primary">Đối tác</h4>
                         <div className="width-based mobile">
                             <div className="row width-based-product mobile">
                                 <div className="col-4 col-lg width-based-product mobile">
@@ -60,7 +60,7 @@ function SectionFive() {
             </div>
             <div className="row text-center">
                 <div className="col">
-                    <h4 className="typo-primary mobile">Loved by Thousands of <br />Happy Customer</h4>
+                    <h4 className="typo-primary mobile">Được yêu thích bởi hàng nghìn<br />khách hàng</h4>
                     <p className="typo-secondary py-3">These are the stories of our customers who have visited us with great <br />pleasure.</p>
                 </div>
             </div>

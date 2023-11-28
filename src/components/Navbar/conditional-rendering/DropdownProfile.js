@@ -7,7 +7,7 @@ import user from "../../../assets/profile/ava.png"
 
 import './DropdownProfile.css';
 
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function DropdownProfile(setIsLogin) {
@@ -17,46 +17,42 @@ function DropdownProfile(setIsLogin) {
   let menuRef = useRef();
 
   useEffect(() => {
-    let handler = (e)=>{
-      if(!menuRef.current.contains(e.target)){
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
         setOpen(false);
         // console.log(menuRef.current);
-      }      
+      }
     };
     document.addEventListener("mousedown", handler);
-    return() =>{
+    return () => {
       document.removeEventListener("mousedown", handler);
     }
   });
 
   // User information from local storage
-  const userLogin = JSON.parse(localStorage.getItem('@userLogin'))
-  const emailUser = (userLogin.user.email);
-  const roleUser = (userLogin.user.role)
+  const userLogin = JSON.parse(localStorage.getItem('@tenTaiKhoan'))
+  const emailUser = (userLogin);
+  const roleUser = ("Khách hàng");
 
   return (
     <div className="App">
       <div className='menu-container' ref={menuRef}>
-        <div className='menu-trigger mobile' onClick={()=>{setOpen(!open)}}>
+        <div className='menu-trigger mobile' onClick={() => { setOpen(!open) }}>
           <img src={user} alt='img'></img>
         </div>
 
-        <div className={`dropdown-menu-profile mobile ${open? 'active' : 'inactive'}`} >
-          <h3 className='profile-title text-center' style={{marginLeft: '-0.5rem'}}>{emailUser}</h3>
+        <div className={`dropdown-menu-profile mobile ${open ? 'active' : 'inactive'}`} >
+          <h3 className='profile-title text-center' style={{ marginLeft: '-0.5rem' }}>{emailUser}</h3>
           <p className='profile-status'>{roleUser}</p>
           <ul className='dropdown-list-item'>
-            <DropdownItem img = {user} text = {"My Profile"} link = {"/profile"}/>
+            <DropdownItem img={user} text={"Thông tin"} link={"/profile"} />
             {/* <DropdownItem img = {edit} text = {"Edit Profile"} link = {"/"}/> */}
-            <DropdownItem img = {inbox} text = {"Inbox"} link = {"/chat"}/>
-            <DropdownItem img = {settings} text = {"Settings"} link = {"#"}/>
-            <DropdownItem img = {help} text = {"Helps"} link = {"#"}/>
-            <DropdownItem img = {logout} text={"Logout"} link={"/products"} 
+            <DropdownItem img={settings} text={"Cài đặt"} link={"#"} />
+            <DropdownItem img={logout} text={"Đăng xuất"} link={"/products"}
               onClick={() => {
-              localStorage.removeItem('@userLogin')
-              localStorage.removeItem('@userRole')
-              // localStorage.clear();
-              setIsLogin(false)
-            }} />
+                localStorage.clear();
+                setIsLogin(false)
+              }} />
           </ul>
         </div>
       </div>
@@ -64,9 +60,9 @@ function DropdownProfile(setIsLogin) {
   );
 }
 
-function DropdownItem({ img, link, onClick, text }){
-  return(
-    <li className = 'dropdownItem'>
+function DropdownItem({ img, link, onClick, text }) {
+  return (
+    <li className='dropdownItem'>
       <img src={img} alt='img'></img>
       <Link to={link} onClick={onClick}>{text}</Link>
     </li>

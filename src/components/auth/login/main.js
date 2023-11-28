@@ -31,13 +31,15 @@ function MainLogin() {
                 'Content-Type': 'application/json'
             },
         }).then((res) => {
-            console.log(res)
-            // localStorage.setItem('@userLogin', JSON.stringify(res.data.data))
-            // localStorage.setItem('@userRole', (res.data.data.user.role))
-            //navigate('/products')
+            console.log(res.data)
+            localStorage.setItem('@token', JSON.stringify(res.data.token))
+            localStorage.setItem('@tenTaiKhoan', JSON.stringify(res.data.tenTaiKhoan))
+            localStorage.setItem('@hoTen', JSON.stringify(res.data.hoTen))
+            alert("Xin chào " + res.data.hoTen + ", bạn đã đăng nhập thành công!")
+            navigate('/products')
         }).catch((err) => {
             console.log(err)
-            //setValidate({ error: true, message: err.response.data.message })
+            setValidate({ error: true, message: err.data.message })
         })
     }
 
