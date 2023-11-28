@@ -63,7 +63,7 @@ function MainSignup() {
                                     <div className="container-fluid">
                                         <Link to="/" className="navbar-brand">
                                             <img src={CoffeeLogo} alt="logo" className="pb-2" />
-                                            <p className="d-inline ps-2 s-lg-auth">NO HOMO</p>
+                                            <p className="d-inline ps-2 s-lg-auth">YANNN COFFEE</p>
                                         </Link>
                                         <Link to="/login">
                                             <div className="btn btn-warning signup-nav rounded-pill px-4 py-2 s-md-auth" style={{ fontSize: '16px' }}><p style={{ marginTop: '2px' }}>Đăng nhập</p></div>
@@ -79,7 +79,7 @@ function MainSignup() {
                                             <div className="col-7">
                                                 <Link to="/" className="navbar-brand">
                                                     <img src={CoffeeLogo} alt="logo" className="pb-2" />
-                                                    <p className="d-inline ps-2 s-lg-auth">NO HOMO</p>
+                                                    <p className="d-inline ps-2 s-lg-auth">YANNN COFFEE</p>
                                                 </Link>
                                             </div>
                                             <div className="col-5">
