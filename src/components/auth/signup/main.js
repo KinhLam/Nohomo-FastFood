@@ -19,6 +19,7 @@ function MainSignup() {
     const handleSignup = async (event) => {
         event.preventDefault()
 
+        //bỏ input vào data, từ json chuyển nó thành kiểu string
         let data = JSON.stringify({
             TenTaiKhoan: signupForm.tenTaiKhoan,
             MatKhau: signupForm.matkhau,
