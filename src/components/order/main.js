@@ -12,17 +12,32 @@ import axios from 'axios'
 function Order() {
 
     // GET DATA ORDER BY ID START
-    const url = process.env.REACT_APP_HOST
+    const url = 'https://localhost:44301'
     const urlImage = process.env.REACT_APP_IMG
 
     const [dataProduct, setDataProduct] = useState([])
     let { id } = useParams()
 
     useEffect(() => {
-        axios.get(`${url}/api/products`)
-            .then(res => setDataProduct(res.data.data))
-            .catch((err) => err)
-    }, [])
+        const fetchData = async () => {
+          
+         
+      try {
+            const response = await axios.get(`${url}/api/MonAns`);
+            // axios automatically throws an error for non-2xx responses, so no need for explicit check
+      
+            // Set main data state
+            setDataProduct(response.data);
+      
+            // Set search data state
+            // setSearchData(response.data);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+      
+        fetchData();
+      }, []);
 
     // Cart Amount Toggle
     const [amount, setAmount] = useState(1);
@@ -34,12 +49,12 @@ function Order() {
     }
 
     return (
-        dataProduct.map((item) => {
-            if (id === item.id) {
-                const img = `${urlImage}/${item.images[0].filename}`
-                localStorage.setItem('productOrder', JSON.stringify(item))
-                localStorage.setItem('productImage', img)
-                localStorage.setItem('productPrice', (item.price * amount).toFixed(3))
+        dataProduct.map((monAn) => {
+            if (id === monAn.maMon) {
+                // const img = `${urlImage}/${item.images[0].filename}`
+                localStorage.setItem('productOrder', JSON.stringify(monAn))
+                // localStorage.setItem('productImage', img)
+                localStorage.setItem('productPrice', (monAn.giaBan * amount).toFixed(3))
                 localStorage.setItem('quantity', amount)
                 return (
                     <>
@@ -48,18 +63,18 @@ function Order() {
                                 <div className="container">
                                     <div className="row">
                                         {/* LEFT CONTENT */}
-                                        <div key={item.id} className="col text-center ms-4 ms-lg-0 leftcontent-order mobile">
+                                        <div key={monAn.maMon} className="col text-center ms-4 ms-lg-0 leftcontent-order mobile">
                                             <nav className="nav">
                                                 <Link to="/products" className="tab-link" aria-current="page">Favorite &amp; Promo</Link>
-                                                <Link to={`/products/detail/${id}`} className="tab-link active">&gt; {item.title}</Link>
+                                                <Link to={`/products/detail/${id}`} className="tab-link active">&gt; {monAn.giaBan}</Link>
                                             </nav>
                                             {/* Desktop */}
-                                            <img src={img} className="hero-order-desktop d-none d-lg-block" alt='productImage'></img>
+                                            {/* <img src={img} className="hero-order-desktop d-none d-lg-block" alt='productImage'></img> */}
                                             {/* Mobile */}
-                                            <img src={img} className="hero-order-mobile d-block d-lg-none" alt='productImage'></img>
+                                            {/* <img src={img} className="hero-order-mobile d-block d-lg-none" alt='productImage'></img> */}
 
-                                            <h1 id='title' className="s-1-order" style={{ marginRight: '40px' }}>{item.title}</h1>
-                                            <h5 className="s-2-order" style={{ marginRight: '30px' }}>{`IDR ${(item.price * amount).toFixed(3)}`}</h5>
+                                            <h1 id='title' className="s-1-order" style={{ marginRight: '40px' }}>{monAn.tenMon}</h1>
+                                            <h5 className="s-2-order" style={{ marginRight: '30px' }}>{`IDR ${(monAn.giaBan * amount).toFixed(3)}`}</h5>
                                             <button className="btn btn-primary order mt-4" style={{ marginRight: '33px', padding: '15px 95px' }}>
                                                 Add to Cart
                                             </button>
@@ -72,7 +87,7 @@ function Order() {
                                             {/* Desktop */}
                                             <div className="container rounded-4 container-order d-none d-lg-block">
                                                 <p className="s-3-order">Delivery only on <b>Monday to <br />friday</b> at <b>1-7 pm</b></p>
-                                                <p className="s-4-order">{item.title} is a method of <br />brewing that combines ground <br />coffee and cool water and uses <br />time instead of heat to extract the <br />flavor. It is brewed in small batches <br />and steeped for as long as 48 <br />hours.</p>
+                                                <p className="s-4-order">{monAn.tenMon} is a method of <br />brewing that combines ground <br />coffee and cool water and uses <br />time instead of heat to extract the <br />flavor. It is brewed in small batches <br />and steeped for as long as 48 <br />hours.</p>
                                                 <p className="s-5-order">Choose a size</p>
                                                 <div className="row">
                                                     <div className="col" style={{ marginLeft: '120px', marginTop: '6px' }}>
@@ -98,7 +113,7 @@ function Order() {
                                             {/* Mobile */}
                                             <div className="container rounded-4 container-order d-block d-lg-none" style={{ marginTop: '-6rem' }}>
                                                 <p className="s-3-order" style={{ padding: '2rem' }}>Delivery only on <b>Monday to friday</b> at <b>1-7 pm</b></p>
-                                                <p className="s-4-order" style={{ padding: '2rem' }}>{item.title} is a method of brewing that combines ground coffee and cool water and uses
+                                                <p className="s-4-order" style={{ padding: '2rem' }}>{monAn.tenMon} is a method of brewing that combines ground coffee and cool water and uses
                                                     time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as
                                                     48 hours.</p>
                                                 <p className="s-5-order" style={{ paddingLeft: '6rem', marginTop: '-3rem' }}>Choose a size</p>
@@ -160,12 +175,12 @@ function Order() {
                                 <div className="row info-panel-footer order">
                                     <div className="col">
                                         <div className="container-fluid">
-                                            <div key={item.id} className="row">
+                                            <div key={monAn.maMon} className="row">
                                                 <div className="col">
-                                                    <img src={img} alt="orderImage" style={{ marginLeft: '-45px' }} />
+                                                    {/* <img src={img} alt="orderImage" style={{ marginLeft: '-45px' }} /> */}
                                                 </div>
                                                 <div className="col" style={{ marginLeft: '-250px', paddingTop: '13px' }}>
-                                                    <h3 className="s-7-order">{item.title}</h3>
+                                                    <h3 className="s-7-order">{monAn.tenMon}</h3>
                                                     <h5 className="s-8-order">L (Large)</h5>
                                                     <h5 className="s-8-order">XL (Extra Large)</h5>
                                                 </div>
@@ -191,7 +206,7 @@ function Order() {
                                 <div className="row">
                                     <div className="col-8 info-panel-mobile">
                                         <div className="col">
-                                            <h3 className="s-7-order mobile">{item.title}</h3>
+                                            <h3 className="s-7-order mobile">{monAn.tenMon}</h3>
                                             <h5 className="s-8-order mobile">L (Large)</h5>
                                             <h5 className="s-8-order mobile">XL (Extra Large)</h5>
                                         </div>

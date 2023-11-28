@@ -26,7 +26,7 @@ function Main() {
     const [searchData, setSearchData] = useState([]);
     const [keyword, setKeyword] = useState('');
     // Pagination
-    const [pageLimit] = useState(12) //set page limit
+    const [pageLimit] = useState(16) //set page limit
     const [currentPage, setCurrentPage] = useState(1)
 
     // get data product
@@ -52,15 +52,17 @@ function Main() {
       }, []);
 
     // get sort data product - Sắp xếp
-    // const handleSort = async (e) => {
-    //     let value = e.target.value
-    //     return await axios
-    //         .get(`${url}/api/products?search=${keyword}&sortBy=${value}&limit=${pageLimit}&page=1`)
-    //         .then((response) => {
-    //             setSearchData(response.data.data)
-    //         })
-    //         .catch((err) => console.log(err))
-    // }
+    const handleSort = async (e) => {
+        let value = e.target.giaBan;
+        try {
+          const response = await axios.get(`${url}/api/MonAns?search=${keyword}&sortBy=${value}&limit=${pageLimit}&page=1`);
+          console.log('Sorted Data:', response.data);
+          setSearchData(response.data);
+        } catch (error) {
+          console.error('Error sorting data:', error);
+        }
+      };
+      
 
     // Danh mục
     // const category = async (value) => {
@@ -277,12 +279,13 @@ Nhận 1 miễn phí chỉ khi bạn mua lời hứa hồng hào</p>
                     <div className="col-lg-8">
 
                         {/* Sắp xếp giá */}
-                        {/* <select className="form-select product mobile" aria-label="Default select example" onChange={handleSort}> */}
-                        <select className="form-select product mobile" aria-label="Default select example">
-                            <option selected>Sắp xếp giá theo</option>
-                            <option value="asc">Giá thấp nhất</option>
-                            <option value="desc">Giá cao nhất</option>
+                        {/* Sắp xếp giá */}
+                        <select className="form-select product mobile" aria-label="Default select example" onChange={handleSort}>
+                        <option selected disabled>Sắp xếp giá theo</option>
+                        <option value="asc">Giá thấp nhất</option>
+                        <option value="desc">Giá cao nhất</option>
                         </select>
+
                         {/* sort by end */}
 
                         {/* Thanh tìm kiếm */}
