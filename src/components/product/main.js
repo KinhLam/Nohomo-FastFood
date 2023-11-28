@@ -12,14 +12,16 @@ import Search from "../../assets/product/search.svg"
 import LoadingProduct from './errorHandling/loadingProduct'
 import DataNotFound from './errorHandling/dataNotFound'
 // url backend
-const url = process.env.REACT_APP_HOST
+const url = 'https://localhost:44301'
 const urlImage = process.env.REACT_APP_IMG
 // console.log(url);
 // console.log(urlImage);
 
 function Main() {
     // Load data product
-    const [dataProduct, setDataProduct] = useState([])
+    // const [dataProduct, setDataProduct] = useState([])
+  const [monAns, setMonAns] = useState([]);
+
     // Load search data product
     const [searchData, setSearchData] = useState([]);
     const [keyword, setKeyword] = useState('');
@@ -28,45 +30,56 @@ function Main() {
     const [currentPage, setCurrentPage] = useState(1)
 
     // get data product
-    useEffect(() => {
-        axios.get(`${url}/api/products`)
-            .then(res => setDataProduct(res.data.data))
-            .catch((err) => console.log(err))
-    }, [])
-    // get sort data product
-    const handleSort = async (e) => {
-        let value = e.target.value
-        return await axios
-            .get(`${url}/api/products?search=${keyword}&sortBy=${value}&limit=${pageLimit}&page=1`)
-            .then((response) => {
-                setSearchData(response.data.data)
-            })
-            .catch((err) => console.log(err))
-    }
-    // Category
-    const category = async (value) => {
-        return await axios
-            .get(`${url}/api/products?category=${value}`)
-            .then((response) => {
-                setSearchData(response.data.data)
-            })
-            .catch((err) => console.log(err))
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${url}/api/MonAns`);
+        // axios automatically throws an error for non-2xx responses, so no need for explicit check
+
+        setMonAns(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+    // get sort data product - Sắp xếp
+    // const handleSort = async (e) => {
+    //     let value = e.target.value
+    //     return await axios
+    //         .get(`${url}/api/products?search=${keyword}&sortBy=${value}&limit=${pageLimit}&page=1`)
+    //         .then((response) => {
+    //             setSearchData(response.data.data)
+    //         })
+    //         .catch((err) => console.log(err))
+    // }
+
+    // Danh mục
+    // const category = async (value) => {
+    //     return await axios
+    //         .get(`${url}/api/products?category=${value}`)
+    //         .then((response) => {
+    //             setSearchData(response.data.data)
+    //         })
+    //         .catch((err) => console.log(err))
+    // }
     // Pagination and search
-    useEffect(() => {
-        loadProductData(pageLimit, 1, 0)
-    }, [keyword])
-    const loadProductData = async (limit, page, increase) => {
-        return await axios
-            .get(`${url}/api/products?search=${keyword}&limit=${limit}&page=${page}`)
-            .then((res) => {
-                setSearchData(res.data.data);
-                setCurrentPage(currentPage + increase)
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
+    // useEffect(() => {
+    //     loadProductData(pageLimit, 1, 0)
+    // }, [keyword])
+    // const loadProductData = async (limit, page, increase) => {
+    //     return await axios
+    //         .get(`${url}/api/products?search=${keyword}&limit=${limit}&page=${page}`)
+    //         .then((res) => {
+    //             setSearchData(res.data.data);
+    //             setCurrentPage(currentPage + increase)
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // }
     const renderPagination = () => {
 
         const rulesOne = (currentPage > pageLimit - 1 && searchData.length === pageLimit)
@@ -81,7 +94,8 @@ function Main() {
                             <Link to="#" className="page-link">1</Link>
                         </li>
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, 2, 1)}>Tiếp</Link>
+                            {/* <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, 2, 1)}>Tiếp</Link> */}
+                            <Link to="#" className="page-link">Tiếp</Link>
                         </li>
                     </ul>
                 </nav>
@@ -92,13 +106,15 @@ function Main() {
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Trước</Link>
+                            {/* <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Trước</Link> */}
+                            <Link to="#" className="page-link">Trước</Link>
                         </li>
                         <li className="page-item">
                             <Link to="#" className="page-link">{currentPage}</Link>
                         </li>
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage + 1), 1)}>Tiếp</Link>
+                            {/* <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage + 1), 1)}>Tiếp</Link> */}
+                            <Link to="#" className="page-link">Tiếp</Link>
                         </li>
                     </ul>
                 </nav>
@@ -109,7 +125,8 @@ function Main() {
                 <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item">
-                            <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Trước</Link>
+                            {/* <Link to="#" className="page-link" onClick={() => loadProductData(pageLimit, (currentPage - 1), -1)}>Trước</Link> */}
+                            <Link to="#" className="page-link">Trước</Link>
                         </li>
                         <li className="page-item">
                             <Link to="#" className="page-link">{currentPage}</Link>
@@ -122,39 +139,40 @@ function Main() {
 
     // Handle server error or data not found!
     const isLoad = () => {
-        if (dataProduct.length === 0) {
+        if (monAns.length === 0) {
             return (<LoadingProduct />)
         } else if (searchData.length === 0) {
             return (<DataNotFound />)
         }
     }
-    // Product content
+    // Danh sách món ăn
     const loopCard = () => {
         return (
             <div className="container" style={{ marginTop: '-1rem' }}>
                 <div className="row row-cols-1 row-cols-md-4 g-4 mt-5">
-                    {searchData.length === 0 ? isLoad() : searchData.map((item) => {
-                        const img = `${urlImage}/${item.images[0].filename}`
-                        const idProduct = item.images[0].id_product;
-                        // console.log(item.images[0].id_product);
+                    {searchData.length === 0 ? isLoad() : searchData.map((monAn) => {
+                        // Use the anhMonAn property to set the image source
+                        const imgSrc = monAn.anhMonAn ? `${urlImage}/${monAn.anhMonAn}` : 'placeholder-image-url';
+    
                         return (
-                            <div key={item.id} className="col-lg-3 col-6 text-start my-5 popup">
-                                <Link to={`/products/detail/${idProduct}`}>
+                            <div key={monAn.maMon} className="col-lg-3 col-6 text-start my-5 popup">
+                                <Link to={`/products/detail/${monAn.maMon}`}>
                                     <div className="card card-product" style={{ height: '212px', width: '156px' }}>
-                                        <img src={img} className="card-img-product" alt="card" style={{ margin: '-40px 0 0 -35px' }} />
+                                        <img src={imgSrc} alt="product" className="card-img-product" style={{ margin: '-40px 0 0 -35px' }} />
                                         <div className="card-body text-center">
-                                            <h5 className="card-title-product" style={{ marginTop: '-100px' }}>{item.title}</h5>
-                                            <p className="s-4-product" style={{ marginTop: '-10px' }}>{item.price}</p>
+                                            <h5 className="card-title-product" style={{ marginTop: '-100px' }}>{monAn.tenMon}</h5>
+                                            <p className="s-4-product" style={{ marginTop: '-10px' }}>{monAn.giaBan}</p>
                                         </div>
                                     </div>
                                 </Link>
                             </div>
-                        )
+                        );
                     })}
                 </div>
             </div>
-        )
-    }
+        );
+    };
+    
 
     // ADMIN 
     const editPromoAdmin = () => {
@@ -235,7 +253,7 @@ Nhận 1 miễn phí chỉ khi bạn mua lời hứa hồng hào</p>
                         </div>
                         {/* Promo Card End */}
                         <Link to="#">
-                            <button className="btn btn-warning product" style={{ margin: '50px 20px 90px 0px' }}>Apply Coupon</button>
+                            <button className="btn btn-warning product" style={{ margin: '50px 20px 90px 0px' }}>Áp dụng</button>
                         </Link>
                         <p className="text-start s-3-product" style={{ marginTop: '-1rem' }}>
                             
@@ -245,55 +263,61 @@ Nhận 1 miễn phí chỉ khi bạn mua lời hứa hồng hào</p>
                             3. Mua 1 tặng 1 chỉ dành cho người dùng mới<br />
                             4. Nên làm thẻ thành viên để áp dụng coupon<br />
                         </p>
-                        {editPromoAdmin()}
+                        {/* {editPromoAdmin()} */}
                     </div>
+
+
                     {/* RIGHT SIDE */}
                     <div className="col-lg-8">
 
-                        {/* sort by start */}
-                        <select className="form-select product mobile" aria-label="Default select example" onChange={handleSort}>
+                        {/* Sắp xếp giá */}
+                        {/* <select className="form-select product mobile" aria-label="Default select example" onChange={handleSort}> */}
+                        <select className="form-select product mobile" aria-label="Default select example">
                             <option selected>Sắp xếp giá theo</option>
                             <option value="asc">Giá thấp nhất</option>
                             <option value="desc">Giá cao nhất</option>
                         </select>
                         {/* sort by end */}
 
-                        {/* search bar start */}
+                        {/* Thanh tìm kiếm */}
                         <div className="searchBox mobile">
                             <input type="text" placeholder="Tìm kiếm mọi thứ bạn muốn..." onChange={(e) => setKeyword(e.target.value)} />
                             <img src={Search} alt="searchBox" />
                         </div>
                         {/* search bar end */}
 
-                        {/* Navs & Tabs Start*/}
+                        {/* Phần danh mục*/}
                         <ul className="nav justify-content-center mt-4">
                             <li className="nav-item">
-                                <Link to="#" onClick={() => loadProductData(pageLimit, 1, 0)} className='nav-link products'>Favorite &amp; Promo</Link>
+                                {/* <Link to="#" onClick={() => loadProductData(pageLimit, 1, 0)} className='nav-link products'>Favorite &amp; Promo</Link> */}
+                                <Link to="#" className='nav-link products'>Favorite &amp; Promo</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link to="#" onClick={() => category("Coffee")} className='nav-link products'>Coffee</Link>
+                                {/* <Link to="#" onClick={() => category("Coffee")} className='nav-link products'>Coffee</Link> */}
+                                <Link to="#" className='nav-link products'>Coffee</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="#" onClick={() => category("Non Coffee")} className='nav-link products'>Non Coffee</Link>
+                                {/* <Link to="#" onClick={() => category("Non Coffee")} className='nav-link products'>Non Coffee</Link> */}
+                                <Link to="#" className='nav-link products'>Non Coffee</Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link to="#" onClick={() => category("Foods")} className='nav-link products'>Foods</Link>
+                                {/* <Link to="#" onClick={() => category("Foods")} className='nav-link products'>Foods</Link> */}
+                                <Link to="#" className='nav-link products'>Foods</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="#" onClick={() => category("add-on")} className='nav-link products'>Add-on</Link>
+                                {/* <Link to="#" onClick={() => category("add-on")} className='nav-link products'>Add-on</Link> */}
+                                <Link to="#" className='nav-link products'>Add-on</Link>
                             </li>
                         </ul>
                         {/* Navs & Tabs End */}
 
-                        {/* Card-Product Start */}
+                        {/* Hàm gọi danh sách món ăn */}
                         {loopCard()}
-                        {/* Pagination start */}
-                        {renderPagination()}
-                        {/* Pagination end */}
 
-                        <p className="s-5-product ms-3">*đã áp dụng mã giảm giá</p>
+                        {/* Phần chuyển trang */}
+                        {renderPagination()}
+
                         {/* Card-Product End */}
-                        {editProductAdmin()}
                     </div>
                 </div>
             </div>
