@@ -290,24 +290,24 @@ Nhận 1 miễn phí chỉ khi bạn mua lời hứa hồng hào</p>
                         <ul className="nav justify-content-center mt-4">
                             <li className="nav-item">
                                 {/* <Link to="#" onClick={() => loadProductData(pageLimit, 1, 0)} className='nav-link products'>Favorite &amp; Promo</Link> */}
-                                <Link to="#" className='nav-link products'>Favorite &amp; Promo</Link>
+                                <Link to="#" className='nav-link products'>Yêu thích &amp; khuyến mãi</Link>
                             </li>
                             <li className="nav-item mx-3">
                                 {/* <Link to="#" onClick={() => category("Coffee")} className='nav-link products'>Coffee</Link> */}
-                                <Link to="#" className='nav-link products'>Coffee</Link>
+                                <Link to="#" className='nav-link products'>Nước uống</Link>
                             </li>
-                            <li className="nav-item">
-                                {/* <Link to="#" onClick={() => category("Non Coffee")} className='nav-link products'>Non Coffee</Link> */}
-                                <Link to="#" className='nav-link products'>Non Coffee</Link>
-                            </li>
+                            {/* <li className="nav-item">
+                                <Link to="#" onClick={() => category("Non Coffee")} className='nav-link products'>Non Coffee</Link>
+                                <Link to="#" className='nav-link products'>Đồ khô</Link>
+                            </li> */}
                             <li className="nav-item mx-3">
                                 {/* <Link to="#" onClick={() => category("Foods")} className='nav-link products'>Foods</Link> */}
-                                <Link to="#" className='nav-link products'>Foods</Link>
+                                <Link to="#" className='nav-link products'>Thức ăn</Link>
                             </li>
-                            <li className="nav-item">
-                                {/* <Link to="#" onClick={() => category("add-on")} className='nav-link products'>Add-on</Link> */}
+                            {/* <li className="nav-item">
+                                <Link to="#" onClick={() => category("add-on")} className='nav-link products'>Add-on</Link>
                                 <Link to="#" className='nav-link products'>Add-on</Link>
-                            </li>
+                            </li> */}
                         </ul>
                         {/* Navs & Tabs End */}
 
